@@ -1,0 +1,285 @@
+<template>
+  <nav>
+    <div class="nav__logo"></div>
+    <span class="nav__line"></span>
+    <div class="nav__links">
+      <div
+        @click.left="activeLink = link"
+        class="links__link"
+        :class="{ link_active: activeLink === link }"
+        v-for="(link, index) in links"
+        :key="index"
+      >
+        <nav-link
+          :locale="locale"
+          :path="links[index].path"
+          :link_id="links[index].id"
+          :link_name="links[index].name"
+        />
+      </div>
+    </div>
+
+    <div class="nav__footer">
+      <router-link class="footer__help-btn" to="/help">
+        {{ localize("Need help") }}?
+      </router-link>
+      <a target="blank" href="https://policies.google.com/privacy?hl=en-US">
+        {{ localize("Privacy Policy") }}
+      </a>
+      <a target="blank" href="https://policies.google.com/terms?hl=en">
+        {{ localize("Terms and Conditions") }}
+      </a>
+      <div class="footer__copyright">
+        Copyright &copy; 2021, created by
+        <a target="blank" href="https://vk.com/sashadobriyan">Z1FiR</a>
+      </div>
+    </div>
+  </nav>
+</template>
+
+<script>
+import NavLink from "@/components/static-dependences/nav/NavLink.vue";
+import localizeFilter from "@/locale/locale";
+
+export default {
+  name: "Nav",
+
+  components: {
+    NavLink,
+  },
+
+  props: {
+    locale: {
+      type: String,
+      default: "EN",
+    },
+  },
+
+  data() {
+    return {
+      links: [
+        {
+          id: "img1",
+          name: "Profile",
+          path: "profile",
+          active: false,
+        },
+        {
+          id: "img2",
+          name: "Folders",
+          path: "folders",
+          active: false,
+        },
+        {
+          id: "img3",
+          name: "Settings",
+          path: "settings",
+          active: false,
+        },
+      ],
+      activeLink: null,
+    };
+  },
+
+  created() {
+    if (localStorage.getItem("active-link-index"))
+      this.links[+localStorage.getItem("active-link-index")].active = true;
+    else this.links[0].active = true;
+
+    this.activeLink = this.links.filter((el) => el.active)[0];
+  },
+
+  methods: {
+    localize(frase) {
+      return localizeFilter[this.locale][frase] || frase;
+    },
+  },
+
+  watch: {
+    activeLink() {
+      this.links.map((el, index) => {
+        if (el.active && el !== this.activeLink) el.active = false;
+        else if (el === this.activeLink) {
+          el.active = true;
+          localStorage.setItem("active-link-index", index);
+        }
+      });
+    },
+  },
+};
+</script>
+
+<style lang="sass">
+$blue: #00A3FF
+
+nav
+  display: flex
+  position: fixed
+  flex-direction: column
+  float: left
+
+  height: calc( 100vh - 6vh )
+  width: calc( 20vw - 2.2vw )
+  padding: 3vh 2.2vw
+  padding-left: 0
+  box-shadow: -3px 0 15px rgba(0, 0, 0, 0.2)
+
+.nav__line
+  display: block
+  position: absolute
+  content: ""
+
+  height: 0%
+  width: 0.5vw
+  top: 0%
+  left: 0%
+  background: $blue
+  transition: top 0.21s ease-in-out, height 0.3s ease-in-out
+
+.nav__logo
+  display: flex
+  justify-content: center
+  align-items: center
+
+  background-image: url('../../assets/home/Logo.svg')
+  background-position: center left
+  background-repeat: no-repeat
+  background-size: contain
+
+  width: calc( 100% - 2.2vw )
+  margin-left: 2.2vw
+  height: 6vh
+
+.nav__links
+  display: flex
+  position: relative
+  flex-direction: column
+  justify-content: flex-start
+
+  width: calc( 100% - 2.2vw )
+  height: calc( 65vh - 6vh )
+  padding-top: 6vh
+
+.router-link
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: flex-start
+
+  padding-left: 2.2vw
+  width: 100%
+  height: 7vh
+  cursor: pointer
+  margin-bottom: 0.5vh
+
+.link__text
+  display: flex
+  align-items: center
+  justify-content: flex-start
+
+  // width: 80%
+  // height: 100%
+  font-style: normal
+  font-weight: 200
+  font-size: 20px
+  line-height: 33px
+
+.img1
+  background-image: url('../../assets/home/profile.svg')
+
+.img2
+  background-image: url('../../assets/home/folder.svg')
+
+.img3
+  background-image: url('../../assets/home/settings.svg')
+
+.link__img
+  display: flex
+  justify-content: center
+  align-items: center
+
+  background: #f1f1f1
+  border-radius: 50%
+
+  margin-right: 1vw
+
+  width: 45px
+  height: 45px
+
+  .img
+    width: 47%
+    height: 47%
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: contain
+    filter: opacity(27%)
+    // transform: translate(0.5px, -0.5px)
+
+a
+  color: #000
+  text-decoration: none
+
+.link_active
+  position: relative
+  .link__img
+    background: $blue
+
+    .img
+      filter: invert(1)
+
+  .link__text
+    font-weight: 400
+    color: $blue
+
+    &::before
+      display: block
+      position: absolute
+      content: ""
+
+      height: 100%
+      width: 0.5vw
+      left: 0%
+      background: $blue
+
+.nav__footer
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+
+  width: calc( 20vw - 4.4vw )
+  padding: 0 2.2vw
+
+  font-style: normal
+  font-weight: 300
+  font-size: 14px
+  line-height: 21px
+
+  .footer__help-btn
+    position: relative
+    background: $blue
+    width: calc( 100% - 6vw )
+
+    margin-bottom: 3vh
+    padding: 1.7vh 3vw
+
+    color: #fff
+    text-align: center
+    font-weight: normal
+    font-size: 17px
+    line-height: 28px
+
+    border-radius: 5px
+
+    &:hover
+      background: lighten($blue, 6%)
+
+    &:active
+      background-color: darken($blue, 5%)
+
+  .footer__copyright,
+  .footer__copyright *
+    color: rgba(0, 0, 0, 0.6)
+
+  .footer__copyright
+    margin-top: 2.5vh
+</style>

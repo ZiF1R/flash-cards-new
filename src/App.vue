@@ -1,13 +1,14 @@
 <template>
   <static-elements :locale="locale" @changeLang="changeLang($event)" />
   <Loader class="routes" v-if="loading" />
-  <router-view v-else class="routes" :locale="locale" @login="login($event)" />
+  <router-view v-else class="routes" :locale="locale" />
 </template>
 
 <script>
 import StaticElements from "@/components/StaticElements";
 import Loader from "@/components/other/Loader";
 import { mapActions } from "vuex";
+import { _db } from "@/db.js";
 
 export default {
   name: "App",
@@ -26,20 +27,24 @@ export default {
 
   async created() {
     this.locale = localStorage.getItem("lang") || "EN";
-    await this.fetchUser();
-    this.loading = false;
+    if (await _db.isSignIn()) {
+      await this.loadData();
+      this.loading = false;
+    } else {
+      this.loading = false;
+      this.$router.push("/login");
+    }
   },
 
   methods: {
+    ...mapActions(["fetchUser"]),
+    async loadData() {
+      await this.fetchUser();
+    },
     changeLang(lang) {
       this.locale = lang;
       localStorage.setItem("lang", this.locale);
     },
-    login(user) {
-      this.User = user;
-      this.$router.push("/profile");
-    },
-    ...mapActions(["fetchUser"]),
   },
 };
 </script>

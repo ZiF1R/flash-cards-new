@@ -74,4 +74,21 @@ const setUserData = async (userData) => {
     .set({ ...userData });
 };
 
-export const _auth = { getUid, login, logout, signUp, getUser, setUserData };
+const isSignIn = async () => {
+  try {
+    await getUid();
+    return true;
+  } catch (error) {
+    return false;
+  }
+};
+
+export const _db = {
+  getUid,
+  login,
+  logout,
+  signUp,
+  getUser,
+  setUserData,
+  isSignIn,
+};

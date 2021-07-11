@@ -1,8 +1,10 @@
 import Vuex from "vuex";
-import db from "./db/db";
+import auth from "./auth/auth";
+import folders from "./folders/folders";
 
 export default new Vuex.Store({
   modules: {
-    db,
+    auth,
+    folders,
   },
 });

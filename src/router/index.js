@@ -1,15 +1,24 @@
 import { createRouter, createWebHistory } from "vue-router";
 import App from "../App.vue";
+import { _db } from "@/db.js";
 
 const routes = [
   {
     path: "/",
     name: "Home",
     component: App,
+    beforeEnter: async (to, from, next) => {
+      if (await _db.isSignIn()) next();
+      else next({ name: "Login" });
+    },
   },
   {
     path: "/profile",
     name: "Profile",
+    beforeEnter: async (to, from, next) => {
+      if (await _db.isSignIn()) next();
+      else next({ name: "Login" });
+    },
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -21,6 +30,10 @@ const routes = [
   {
     path: "/folders",
     name: "Folders",
+    beforeEnter: async (to, from, next) => {
+      if (await _db.isSignIn()) next();
+      else next({ name: "Login" });
+    },
     component: () =>
       import(
         /* webpackChunkName: "folders" */ "../views/main-pages/Folders.vue"
@@ -29,6 +42,10 @@ const routes = [
   {
     path: "/settings",
     name: "Settings",
+    beforeEnter: async (to, from, next) => {
+      if (await _db.isSignIn()) next();
+      else next({ name: "Login" });
+    },
     component: () =>
       import(
         /* webpackChunkName: "settings" */ "../views/main-pages/Settings.vue"
@@ -37,6 +54,10 @@ const routes = [
   {
     path: "/help",
     name: "Help",
+    beforeEnter: async (to, from, next) => {
+      if (await _db.isSignIn()) next();
+      else next({ name: "Login" });
+    },
     component: () => import(/* webpackChunkName: "help" */ "../views/Help.vue"),
   },
   {

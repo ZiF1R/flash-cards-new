@@ -35,7 +35,7 @@
       </router-link>
     </template>
     <template v-slot:auth__finish>
-      <button type="submit" class="finish" @click.left.prevent="login">
+      <button type="submit" class="finish" @click.left.prevent="signIn">
         {{ localize("Login") }}
       </button>
     </template>
@@ -50,7 +50,7 @@
 <script>
 import AuthTemp from "@/components/Auth";
 import localizeFilter from "@/locale/locale";
-import { _auth } from "@/auth.js";
+import { mapActions } from "vuex";
 
 export default {
   name: "Login",
@@ -88,19 +88,24 @@ export default {
     };
   },
 
-  //TODO!: CHANGE LOGIN()
+  //todo!: vuelidate
 
   methods: {
-    async login() {
+    ...mapActions(["login"]),
+    async signIn() {
       if (!this.validateData()) {
         this.errorMessage = "Please, fill empty fields!";
         return 0;
       }
       this.errorMessage = "";
 
-      let user = await _auth.login(this.loginData);
-      if (typeof user === "string") this.errorMessage = user;
-      else this.$emit("login", user); //! to change (*)
+      let answer = (await this.login(this.loginData)) || 0;
+      if (answer) {
+        this.errorMessage = answer;
+        return 0;
+      }
+
+      this.$router.push("/profile");
     },
     validateData() {
       return this.loginData.email !== "" && this.loginData.password !== "";

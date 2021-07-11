@@ -10,6 +10,7 @@
         <input
           class="input"
           type="text"
+          :title="localize(`Nickname`)"
           :placeholder="localize(`Nickname`)"
           v-model="localUser.Nickname"
         />
@@ -22,6 +23,7 @@
           <input
             class="input"
             type="text"
+            :title="localize(`Last name`)"
             :placeholder="localize(`Last name`)"
             v-model="localUser.Last_name"
           />
@@ -33,6 +35,7 @@
           <input
             class="input"
             type="text"
+            :title="localize(`Name`)"
             :placeholder="localize(`Name`)"
             v-model="localUser.Name"
           />
@@ -45,6 +48,7 @@
         <input
           class="input"
           type="email"
+          :title="localize(`Email`)"
           :placeholder="localize(`Email`)"
           v-model="localUser.Email"
           readonly
@@ -57,6 +61,7 @@
         <input
           class="input password"
           type="password"
+          :title="localize(`Password`)"
           :placeholder="localize(`Password`)"
           v-model="localUser.Password"
           readonly
@@ -86,7 +91,7 @@
 
 <script>
 import localizeFilter from "@/locale/locale";
-import { _auth } from "@/auth.js";
+import { _db } from "@/db.js";
 import { mapGetters, mapActions } from "vuex";
 
 export default {
@@ -111,11 +116,13 @@ export default {
   },
 
   methods: {
+    ...mapGetters(["getUser"]),
+    ...mapActions(["sendUserData"]),
     localize(frase) {
       return localizeFilter[this.locale][frase] || frase;
     },
     async logOut() {
-      await _auth.logout();
+      await _db.logout();
       this.$router.push("/login");
     },
     saveChanges() {
@@ -139,8 +146,6 @@ export default {
         this.passTitle = "Show password";
       }
     },
-    ...mapGetters(["getUser"]),
-    ...mapActions(["sendUserData"]),
   },
 };
 </script>

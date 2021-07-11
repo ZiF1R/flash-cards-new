@@ -51,7 +51,7 @@
 <script>
 import AuthTemp from "@/components/Auth";
 import localizeFilter from "@/locale/locale";
-import { _auth } from "@/auth.js";
+import { _db } from "@/db.js";
 
 export default {
   name: "Registration",
@@ -113,6 +113,8 @@ export default {
     };
   },
 
+  //todo!: vuelidate
+
   methods: {
     async registrate() {
       if (!this.validateData()) {
@@ -124,7 +126,7 @@ export default {
       }
       this.errorMessage = "";
 
-      let answer = await _auth.signUp(this.registrationData);
+      let answer = await _db.signUp(this.registrationData);
       if (typeof answer === "string") this.errorMessage = answer;
       else this.$router.push("/login");
     },

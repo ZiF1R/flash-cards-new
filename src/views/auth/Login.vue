@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import AuthTemp from "@/components/Auth";
+import AuthTemp from "@/components/AuthTemp";
 import localizeFilter from "@/locale/locale";
 import { mapActions } from "vuex";
 
@@ -93,22 +93,15 @@ export default {
   methods: {
     ...mapActions(["login"]),
     async signIn() {
-      if (!this.validateData()) {
-        this.errorMessage = "Please, fill empty fields!";
-        return 0;
-      }
-      this.errorMessage = "";
-
+      //* this.login() returns undefined if it's succes
+      //* else this.login() returns error message
       let answer = (await this.login(this.loginData)) || 0;
       if (answer) {
         this.errorMessage = answer;
         return 0;
       }
-
+      this.errorMessage = "";
       this.$router.push("/profile");
-    },
-    validateData() {
-      return this.loginData.email !== "" && this.loginData.password !== "";
     },
     showPass() {
       const markers = document.querySelector(".pass");

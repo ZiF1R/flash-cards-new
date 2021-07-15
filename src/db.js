@@ -83,6 +83,89 @@ const isSignIn = async () => {
   }
 };
 
+const sendFolder = async (folder) => {
+  const uid = await getUid();
+  await firebase
+    .database()
+    .ref(`/users/${uid}/folders/${folder.data.name}`)
+    .set({ ...folder });
+
+  // let data = (await getFolders()) || [];
+  // return data;
+};
+
+const getFolders = async () => {
+  let dbData = [];
+  const uid = await getUid();
+  await firebase
+    .database()
+    .ref(`/users/${uid}/folders/`)
+    .once("value")
+    .then((snapShot) => {
+      try {
+        if (snapShot.toJSON()) {
+          dbData = Object.values(snapShot.toJSON()) || [];
+          for (let folder of dbData) {
+            folder.cards && (folder.cards = [...Object.values(folder.cards)]);
+          }
+        }
+      } catch (error) {
+        return 0;
+      }
+    });
+
+  return dbData;
+};
+
+const removeFolder = async (name) => {
+  const uid = await getUid();
+  await firebase.database().ref(`/users/${uid}/folders/${name}`).remove();
+};
+
+const sendCategory = async (category) => {
+  const uid = await getUid();
+  await firebase
+    .database()
+    .ref(`/users/${uid}/categories/${category}`)
+    .set({ name: category });
+};
+
+const getCategories = async () => {
+  let categories = [];
+  const uid = await getUid();
+  await firebase
+    .database()
+    .ref(`/users/${uid}/categories/`)
+    .once("value")
+    .then((snapShot) => {
+      try {
+        if (snapShot.toJSON()) {
+          categories = Object.values(snapShot.toJSON()) || [];
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  return [...categories.map((el) => el.name)];
+};
+
+const editFolder = async (folder, oldName) => {
+  const uid = await getUid();
+  (folder.data.name !== oldName) && 
+    await firebase.database().ref(`/users/${uid}/folders/${oldName}`).remove();
+
+  let obj = {};
+  if (folder.cards) {
+    folder.cards.map((el) => (obj[el.term] = el));
+  }
+  folder.cards = { ...obj };
+
+  await firebase
+    .database()
+    .ref(`/users/${uid}/folders/${folder.data.name}/`)
+    .set({ ...folder });
+};
+
 export const _db = {
   getUid,
   login,
@@ -91,4 +174,10 @@ export const _db = {
   getUser,
   setUserData,
   isSignIn,
+  sendFolder,
+  getFolders,
+  removeFolder,
+  sendCategory,
+  getCategories,
+  editFolder,
 };

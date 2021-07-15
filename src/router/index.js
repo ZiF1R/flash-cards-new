@@ -1,12 +1,15 @@
 import { createRouter, createWebHistory } from "vue-router";
-import App from "../App.vue";
+// import App from "../App.vue";
 import { _db } from "@/db.js";
 
 const routes = [
   {
     path: "/",
     name: "Home",
-    component: App,
+    component: () =>
+      import(
+        /* webpackChunkName: "profile" */ "../views/main-pages/Profile.vue"
+      ),
     beforeEnter: async (to, from, next) => {
       if (await _db.isSignIn()) next();
       else next({ name: "Login" });

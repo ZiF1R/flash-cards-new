@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import NavLink from "@/components/static-dependences/nav/NavLink.vue";
+import NavLink from "@/components/static-components/nav/NavLink.vue";
 import localizeFilter from "@/locale/locale";
 
 export default {

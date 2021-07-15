@@ -1,96 +1,99 @@
 <template>
-  <div class="profile">
-    <div class="profile__head">
-      <div class="head__icon"></div>
+  <routes-temp>
+    <template v-slot:page_head>
+      <img src="@/assets/home/profileIcon.svg" class="head__icon" />
       <div class="head__text">{{ localize("Profile") }}</div>
-    </div>
-    <hr class="headUnderline" />
-    <div class="profile__content">
-      <div class="input-wrapper">
-        <input
-          class="input"
-          type="text"
-          :title="localize(`Nickname`)"
-          :placeholder="localize(`Nickname`)"
-          v-model="localUser.Nickname"
-        />
-        <div class="icons" :title="localize(`You can change this field`)">
-          <img src="@/assets/profile/edit.svg" />
-        </div>
-      </div>
-      <div class="names">
+    </template>
+    <template v-slot:page_content>
+      <div class="profile__content">
         <div class="input-wrapper">
           <input
             class="input"
             type="text"
-            :title="localize(`Last name`)"
-            :placeholder="localize(`Last name`)"
-            v-model="localUser.Last_name"
+            :title="localize(`Nickname`)"
+            :placeholder="localize(`Nickname`)"
+            v-model="localUser.Nickname"
           />
           <div class="icons" :title="localize(`You can change this field`)">
             <img src="@/assets/profile/edit.svg" />
           </div>
         </div>
+        <div class="names">
+          <div class="input-wrapper">
+            <input
+              class="input"
+              type="text"
+              :title="localize(`Last name`)"
+              :placeholder="localize(`Last name`)"
+              v-model="localUser.Last_name"
+            />
+            <div class="icons" :title="localize(`You can change this field`)">
+              <img src="@/assets/profile/edit.svg" />
+            </div>
+          </div>
+          <div class="input-wrapper">
+            <input
+              class="input"
+              type="text"
+              :title="localize(`Name`)"
+              :placeholder="localize(`Name`)"
+              v-model="localUser.Name"
+            />
+            <div class="icons" :title="localize(`You can change this field`)">
+              <img src="@/assets/profile/edit.svg" />
+            </div>
+          </div>
+        </div>
         <div class="input-wrapper">
           <input
             class="input"
-            type="text"
-            :title="localize(`Name`)"
-            :placeholder="localize(`Name`)"
-            v-model="localUser.Name"
+            type="email"
+            :title="localize(`Email`)"
+            :placeholder="localize(`Email`)"
+            v-model="localUser.Email"
+            readonly
           />
-          <div class="icons" :title="localize(`You can change this field`)">
-            <img src="@/assets/profile/edit.svg" />
+          <div class="icons" :title="localize(`You cannot change this field`)">
+            <img src="@/assets/profile/lock.svg" />
           </div>
         </div>
-      </div>
-      <div class="input-wrapper">
-        <input
-          class="input"
-          type="email"
-          :title="localize(`Email`)"
-          :placeholder="localize(`Email`)"
-          v-model="localUser.Email"
-          readonly
-        />
-        <div class="icons" :title="localize(`You cannot change this field`)">
-          <img src="@/assets/profile/lock.svg" />
+        <div class="input-wrapper">
+          <input
+            class="input password"
+            type="password"
+            :title="localize(`Password`)"
+            :placeholder="localize(`Password`)"
+            v-model="localUser.Password"
+            readonly
+          />
+          <div
+            class="icons pass"
+            :title="localize(passTitle)"
+            style="cursor: pointer"
+            @click.left="showPass"
+          >
+            <img class="show" src="@/assets/profile/eye.svg" />
+            <img class="active hide" src="@/assets/profile/invisible.svg" />
+          </div>
+        </div>
+        <div class="btns">
+          <button class="create btn" @click.left="saveChanges">
+            {{ localize("Save") }}
+          </button>
+          <button @click.left="logOut" class="cancel btn">
+            {{ localize("Log out") }}
+            <img class="logout-icon" src="@/assets/profile/logout.svg" />
+          </button>
         </div>
       </div>
-      <div class="input-wrapper">
-        <input
-          class="input password"
-          type="password"
-          :title="localize(`Password`)"
-          :placeholder="localize(`Password`)"
-          v-model="localUser.Password"
-          readonly
-        />
-        <div
-          class="icons pass"
-          :title="localize(passTitle)"
-          style="cursor: pointer"
-          @click.left="showPass"
-        >
-          <img class="show" src="@/assets/profile/eye.svg" />
-          <img class="active hide" src="@/assets/profile/invisible.svg" />
-        </div>
-      </div>
-      <div class="btns">
-        <button class="create btn" @click.left="saveChanges">
-          {{ localize("Save") }}
-        </button>
-        <button @click.left="logOut" class="cancel btn">
-          {{ localize("Log out") }}
-          <img class="logout-icon" src="@/assets/profile/logout.svg" />
-        </button>
-      </div>
-    </div>
-  </div>
+    </template>
+  </routes-temp>
 </template>
 
 <script>
 import localizeFilter from "@/locale/locale";
+import RoutesTemp from "@/components/RoutesTemp";
+
 import { _db } from "@/db.js";
 import { mapGetters, mapActions } from "vuex";
 
@@ -102,6 +105,10 @@ export default {
       type: String,
       default: "EN",
     },
+  },
+
+  components: {
+    RoutesTemp,
   },
 
   data() {
@@ -150,53 +157,24 @@ export default {
 };
 </script>
 
-<style lang="sass">
-.profile
-  display: flex
-  flex-direction: column
-
-  margin-left: 26vw
-  width: 62vw
-
-.profile__head
-  margin-top: 6vh
-  display: flex
-  flex-direction: row
-  align-items: center
-  height: 7vh
-
-  user-select: none
-  -moz-user-select: -moz-none
-  -webkit-user-select: none
-  -ms-user-select: none
-
-  .head__icon
-    height: 100%
-    width: 3.5vw
-    margin-right: 1vw
-    background-image: url('../../assets/home/profileIcon.svg')
-    background-position: center center
-    background-repeat: no-repeat
-    background-size: contain
-
-  .head__text
-    margin-top: 1vh
-    font-style: normal
-    font-weight: normal
-    font-size: 30px
-    line-height: 46px
-
-.headUnderline
-  margin-top: 5vh
-  width: 40%
-</style>
-
 <style lang="sass" scoped>
 .profile__content
   display: flex
   position: relative
   flex-direction: column
   margin-top: 5vh
+
+.head__icon
+    height: 100%
+    width: 3.5vw
+    margin-right: 1vw
+
+.head__text
+    margin-top: 1vh
+    font-style: normal
+    font-weight: normal
+    font-size: 30px
+    line-height: 46px
 
 .input
   position: relative

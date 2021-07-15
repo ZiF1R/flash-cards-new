@@ -4,8 +4,8 @@
 </template>
 
 <script>
-import AppNav from "@/components/static-dependences/Nav";
-import ScrollLang from "@/components/static-dependences/ScrollLang";
+import AppNav from "@/components/static-components/Nav";
+import ScrollLang from "@/components/static-components/ScrollLang";
 
 export default {
   name: "StaticElements",

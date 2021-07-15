@@ -12,11 +12,11 @@
         <input
           autocomplete="off"
           class="input"
+          maxlength="30"
+          :type="input.type"
           :class="{ password: input.content === 'Password' }"
           :placeholder="localize(`${input.content}`)"
           v-model.trim="registrationData[input.model]"
-          maxlength="30"
-          :type="input.type"
         />
         <div
           v-if="input.content === 'Password'"
@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import AuthTemp from "@/components/Auth";
+import AuthTemp from "@/components/AuthTemp";
 import localizeFilter from "@/locale/locale";
 import { _db } from "@/db.js";
 

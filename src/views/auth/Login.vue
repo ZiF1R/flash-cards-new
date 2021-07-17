@@ -35,7 +35,7 @@
       </router-link>
     </template>
     <template v-slot:auth__finish>
-      <button type="submit" class="finish" @click.left.prevent="signIn">
+      <button class="finish" @click.left.prevent="signIn">
         {{ localize("Login") }}
       </button>
     </template>
@@ -93,10 +93,8 @@ export default {
   methods: {
     ...mapActions(["login"]),
     async signIn() {
-      //* this.login() returns undefined if it's succes
-      //* else this.login() returns error message
-      let answer = (await this.login(this.loginData)) || 0;
-      if (answer) {
+      let answer = await this.login(this.loginData);
+      if (typeof answer === "string") {
         this.errorMessage = answer;
         return 0;
       }

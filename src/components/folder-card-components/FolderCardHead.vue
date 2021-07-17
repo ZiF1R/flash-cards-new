@@ -9,11 +9,11 @@
       <div v-if="showSettings" class="settings-wrapper">
         <div class="setting" @click.left="showEditForm">
           <img src="@/assets/home/edit.svg" class="edit__icon" />
-          <div class="edit__text">{{ localize("Edit") }}</div>
+          <span class="edit__text">{{ localize("Edit") }}</span>
         </div>
         <div class="setting" @click.left="showConfirmForm">
           <img src="@/assets/home/remove.svg" class="remove__icon" />
-          <div class="remove__text">{{ localize("Remove") }}</div>
+          <span class="remove__text">{{ localize("Remove") }}</span>
         </div>
       </div>
     </div>

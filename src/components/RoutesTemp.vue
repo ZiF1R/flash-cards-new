@@ -3,7 +3,8 @@
     <div class="page__head">
       <slot name="page_head"></slot>
     </div>
-    <slot name="card_filters"></slot>
+    <slot name="page_path"></slot>
+    <slot name="page_filters"></slot>
     <hr class="pageUnderline" />
     <slot name="page_content"></slot>
     <!-- <div class="page__content">
@@ -29,7 +30,7 @@
   -ms-user-select: none
 
 .pageUnderline
-  margin-top: 5vh
+  // margin-top: 5vh
   width: 40%
 
 // .page__content

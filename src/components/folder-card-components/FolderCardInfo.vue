@@ -1,20 +1,17 @@
 <template>
   <div class="folder__info">
-    <div
-      class="folder__name"
-      @click.left="this.$emit('goToFolder', { folder, index })"
-    >
+    <span class="folder__name" @click.left="goToFolder">
       {{ folder.data.name }}
-    </div>
-    <div class="folder__category">
+    </span>
+    <span class="folder__category">
       {{ localize("Category") }}: {{ folder.data.category }}
-    </div>
-    <div class="folder__memorized">
+    </span>
+    <span class="folder__memorized">
       {{ showMemorized }} {{ localize("memorized") }}
-    </div>
-    <div class="folder__date">
+    </span>
+    <span class="folder__date">
       {{ localize("Added") }} {{ showCreatingDate() }}
-    </div>
+    </span>
   </div>
 </template>
 
@@ -49,6 +46,9 @@ export default {
     },
     showCreatingDate() {
       return new Date(this.folder.data.created).toLocaleString();
+    },
+    goToFolder() {
+      this.$router.push(`/folders/${this.folder.data.name}`);
     },
   },
 

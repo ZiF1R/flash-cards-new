@@ -75,12 +75,7 @@ const setUserData = async (userData) => {
 };
 
 const isSignIn = async () => {
-  try {
-    await getUid();
-    return true;
-  } catch (error) {
-    return false;
-  }
+  return await getUid() ? true : false;
 };
 
 const sendFolder = async (folder) => {
@@ -106,7 +101,8 @@ const getFolders = async () => {
         if (snapShot.toJSON()) {
           dbData = Object.values(snapShot.toJSON()) || [];
           for (let folder of dbData) {
-            folder.cards && (folder.cards = [...Object.values(folder.cards)]);
+            if (folder.cards) folder.cards = [...Object.values(folder.cards)];
+            else folder.cards = [];
           }
         }
       } catch (error) {
@@ -155,7 +151,7 @@ const editFolder = async (folder, oldName) => {
     await firebase.database().ref(`/users/${uid}/folders/${oldName}`).remove();
 
   let obj = {};
-  if (folder.cards) {
+  if (Array.isArray(folder.cards)) {
     folder.cards.map((el) => (obj[el.term] = el));
   }
   folder.cards = { ...obj };
@@ -164,6 +160,16 @@ const editFolder = async (folder, oldName) => {
     .database()
     .ref(`/users/${uid}/folders/${folder.data.name}/`)
     .set({ ...folder });
+};
+
+// *____*
+
+const sendCard = async (newCard, rootFolderName) => {
+  const uid = await getUid();
+  await firebase
+    .database()
+    .ref(`/users/${uid}/folders/${rootFolderName}/cards/${newCard.term}`)
+    .set({ ...newCard });
 };
 
 export const _db = {
@@ -180,4 +186,5 @@ export const _db = {
   sendCategory,
   getCategories,
   editFolder,
+  sendCard,
 };

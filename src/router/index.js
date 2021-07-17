@@ -6,14 +6,14 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: () =>
-      import(
-        /* webpackChunkName: "profile" */ "../views/main-pages/Profile.vue"
-      ),
     beforeEnter: async (to, from, next) => {
       if (await _db.isSignIn()) next();
       else next({ name: "Login" });
     },
+    component: () =>
+      import(
+        /* webpackChunkName: "profile" */ "../views/main-pages/Profile.vue"
+      ),
   },
   {
     path: "/profile",
@@ -62,6 +62,18 @@ const routes = [
       else next({ name: "Login" });
     },
     component: () => import(/* webpackChunkName: "help" */ "../views/Help.vue"),
+  },
+  {
+    path: "/folders/:folder_name",
+    name: "FolderContent",
+    beforeEnter: async (to, from, next) => {
+      if (await _db.isSignIn()) next();
+      else next({ name: "Login" });
+    },
+    component: () =>
+      import(
+        /* webpackChunkName: "foldercontent" */ "../views/main-pages/FolderContent.vue"
+      ),
   },
   {
     path: "/login",

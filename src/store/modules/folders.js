@@ -44,14 +44,29 @@ export default {
 
       if (uniqName) {
         let folderToSend = JSON.parse(JSON.stringify(oldFolder));
-        [folderToSend.data.name, folderToSend.data.name] =
-          [editedFolder.data.name, editedFolder.data.name];
+        [folderToSend.data.name, folderToSend.data.category] =
+          [editedFolder.data.name, editedFolder.data.category];
 
         commit("changeFolder", {oldFolder, newFolder: folderToSend});
         await _db.editFolder(folderToSend, oldFolder.data.name);
         return true;
       }
       return false;
+    },
+
+    async sendCard({ commit }, { newCard, rootFolder }) {
+      if (
+        rootFolder.cards.filter((card) => card.term === newCard.term)
+          .length === 0 && rootFolder !== null
+      ) {
+        commit("addCard", { newCard, rootFolder });
+        await _db.sendCard(newCard, rootFolder.data.name);
+        return true;
+      }
+      return false;
+    },
+    async getCards({ state }, rootFolder) {
+      return state.folders.filter((folder) => folder === rootFolder)[0];
     },
   },
   mutations: {
@@ -76,6 +91,13 @@ export default {
     },
     addCategory(state, newCategory) {
       state.categories.push(newCategory);
+    },
+
+    addCard(state, { newCard, rootFolder }) {
+      state.folders.map((folder) => {
+        if (folder === rootFolder) folder.cards.push(newCard);
+        return folder;
+      });
     },
   },
   state: {

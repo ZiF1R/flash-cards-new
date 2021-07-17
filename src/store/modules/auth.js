@@ -12,7 +12,7 @@ export default {
 
     async login({ commit }, loginData) {
       let answer = "";
-      if (loginData.email !== "" && loginData.password !== "")
+      if (loginData.email === "" && loginData.password === "")
         return "Please, fill empty fields!";
 
       try {

@@ -1,5 +1,5 @@
 <template>
-  <div @click="$emit(`tap`)">
+  <div class="setting" @click="$emit(`tap`)">
     <img
       v-if="icon === `edit`"
       src="@/assets/home/edit.svg"
@@ -45,6 +45,8 @@ export default {
     },
   },
 
+  emits: ["tap"],
+
   methods: {
     localize(frase) {
       return localizeFilter[this.locale][frase] || frase;
@@ -54,6 +56,18 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.setting
+    display: flex
+    flex-direction: row
+    text-align: left
+    align-items: center
+    width: calc( 100% - 2vw )
+    height: 3vh
+    padding: 0.2vh 1vw
+
+    &:hover
+      background: darken(#fff, 3%)
+
 .setting__icon
   margin-right: 0.5vw
   width: 15px

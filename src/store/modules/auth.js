@@ -25,8 +25,8 @@ export default {
     },
 
     async sendUserData({ commit }, data) {
-      await _db.sendUserData();
       commit("updateUser", data);
+      await _db.setUserData(data);
     },
   },
   mutations: {

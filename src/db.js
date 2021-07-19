@@ -154,12 +154,17 @@ const editFolder = async (folder, oldName) => {
   if (Array.isArray(folder.cards)) {
     folder.cards.map((el) => (obj[el.term] = el));
   }
-  folder.cards = { ...obj };
+  // folder.cards = { ...obj };
 
   await firebase
     .database()
     .ref(`/users/${uid}/folders/${folder.data.name}/`)
     .set({ ...folder });
+
+    await firebase
+      .database()
+      .ref(`/users/${uid}/folders/${folder.data.name}/cards/`)
+      .set({ ...obj });
 };
 
 // *____*
@@ -170,6 +175,30 @@ const sendCard = async (newCard, rootFolderName) => {
     .database()
     .ref(`/users/${uid}/folders/${rootFolderName}/cards/${newCard.term}`)
     .set({ ...newCard });
+};
+
+const editCard = async (card, oldTerm, folderName) => {
+  const uid = await getUid();
+  await firebase
+    .database()
+    .ref(
+      `/users/${uid}/folders/${folderName}/cards/${oldTerm}`
+    )
+    .remove();
+  await firebase
+    .database()
+    .ref(
+      `/users/${uid}/folders/${folderName}/cards/${card.term}`
+    )
+    .set({ ...card });
+};
+
+const removeCard = async (folderName, cardTerm) => {
+  const uid = await getUid();
+  await firebase
+    .database()
+    .ref(`/users/${uid}/folders/${folderName}/cards/${cardTerm}`)
+    .remove();
 };
 
 export const _db = {
@@ -187,4 +216,6 @@ export const _db = {
   getCategories,
   editFolder,
   sendCard,
+  editCard,
+  removeCard,
 };

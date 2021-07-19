@@ -7,7 +7,7 @@
       <input
         autocomplete="off"
         type="text"
-        class="folder-name"
+        class="input"
         :placeholder="localize(`Folder name`)"
         :title="localize(`Folder name`)"
         maxlength="30"
@@ -103,8 +103,8 @@ export default {
 };
 </script>
 
-<style lang="sass">
-.folder-name
+<style lang="sass" scoped>
+.input
     font-style: normal
     font-weight: 300
     font-size: 19px

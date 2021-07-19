@@ -3,6 +3,7 @@
     :locale="locale"
     :activeSettings="activeSettings"
     :card="card"
+    @removeCard="deleteCard"
     @showSettings="$emit(`showSettings`)"
   />
   <card-info :locale="locale" :card="card" />
@@ -12,6 +13,7 @@
 import localizeFilter from "@/locale/locale";
 import CardHead from "@/components/card-components/CardHead";
 import CardInfo from "@/components/card-components/CardInfo";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "Card",
@@ -49,8 +51,27 @@ export default {
   },
 
   methods: {
+    ...mapGetters(["getFolders"]),
+    ...mapActions(["removeCard"]),
     localize(frase) {
       return localizeFilter[this.locale][frase] || frase;
+    },
+    async deleteCard() {
+      await this.removeCard({
+        rootFolder: this.getRootFolder,
+        cardToRemove: this.card,
+      });
+    },
+  },
+
+  computed: {
+    getRootFolder() {
+      let rootFolder = this.getFolders().filter(
+        (folder) =>
+          folder.data.name ===
+          this.$router.currentRoute._value.params.folder_name
+      );
+      return rootFolder ? rootFolder[0] : null;
     },
   },
 };

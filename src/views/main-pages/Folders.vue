@@ -2,7 +2,7 @@
   <routes-temp>
     <template v-slot:page_head>
       <img src="@/assets/home/folderIcon.svg" class="head__icon" />
-      <div class="head__text">{{ localize("Folders") }}</div>
+      <span class="head__text">{{ localize("Folders") }}</span>
     </template>
     <template v-slot:page_content>
       <div class="home__content">
@@ -75,7 +75,7 @@ export default {
 };
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 .head__icon
     height: 100%
     width: 3.5vw
@@ -85,7 +85,7 @@ export default {
     margin-top: 1vh
     font-style: normal
     font-weight: normal
-    font-size: 30px
+    font-size: 1.875em
     line-height: 46px
 
 .home__content

@@ -4,7 +4,7 @@
     <template v-slot:popup__content>
       <input
         type="text"
-        class="folder-name"
+        class="input"
         :placeholder="localize(`Folder name`)"
         :title="localize(`Folder name`)"
         maxlength="30"
@@ -102,6 +102,63 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.input
+    font-style: normal
+    font-weight: 300
+    font-size: 19px
+    line-height: 28px
+
+    border: none
+    outline: none
+
+    margin-bottom: 3vh
+    width: 100%
+    border-bottom: 1px solid #000
+
+.label-categories
+    display: flex
+    justify-content: flex-start
+    font-style: normal
+    font-weight: 300
+    font-size: 19px
+    line-height: 28px
+
+    width: 100%
+    border-bottom: 1px solid #000
+
+#categories
+    flex: 1 0 auto
+    font-style: normal
+    font-weight: 300
+    font-size: 16px
+    line-height: 28px
+
+    color: rgba(0, 0, 0, 0.7)
+    border: none
+    outline: none
+    background: inherit
+
+.add-category
+    font-style: normal
+    font-weight: 300
+    font-size: 16px
+    line-height: 28px
+
+    padding: 0.2vh 0
+    cursor: pointer
+    margin-top: 3vh
+    width: 100%
+
+    background: #F1F1F1
+    border: none
+    outline: none
+
+    &:hover
+      background: darken(#F1F1F1, 2%)
+
+    &:active
+      background-color: darken(#F1F1F1, 4%)
+
 button
   font-style: normal
   font-weight: normal

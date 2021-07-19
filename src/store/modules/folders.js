@@ -43,12 +43,12 @@ export default {
         ).length === 0;
 
       if (uniqName) {
-        let folderToSend = JSON.parse(JSON.stringify(oldFolder));
-        [folderToSend.data.name, folderToSend.data.category] =
+        let oldName = oldFolder.data.name;
+        [oldFolder.data.name, oldFolder.data.category] =
           [editedFolder.data.name, editedFolder.data.category];
 
-        commit("changeFolder", {oldFolder, newFolder: folderToSend});
-        await _db.editFolder(folderToSend, oldFolder.data.name);
+        commit("changeFolder", {oldName, newFolder: oldFolder});
+        await _db.editFolder(oldFolder, oldName);
         return true;
       }
       return false;
@@ -65,8 +65,27 @@ export default {
       }
       return false;
     },
-    async getCards({ state }, rootFolder) {
-      return state.folders.filter((folder) => folder === rootFolder)[0];
+    async changeCard({ commit }, {oldCard, editedCard, rootFolder}) {
+      let uniqName =
+        rootFolder.cards.filter(
+          (card) =>
+            card !== oldCard && card.term === editedCard.term
+        ).length === 0;
+
+      if (uniqName) {
+        let oldTerm = oldCard.term;
+        [oldCard.term, oldCard.definition, oldCard.examples] =
+          [editedCard.term, editedCard.definition, editedCard.examples];
+
+        commit("changeCard", {oldTerm, newCard: oldCard, rootFolder});
+        await _db.editCard(oldCard, oldTerm, rootFolder.data.name);
+        return true;
+      }
+      return false;
+    },
+    async removeCard({ commit }, { rootFolder, cardToRemove }) {
+      commit("removeCard", { rootFolder, cardToRemove });
+      await _db.removeCard(rootFolder.data.name, cardToRemove.term);
     },
   },
   mutations: {
@@ -76,10 +95,11 @@ export default {
     addFolder(state, newFolder) {
       state.folders.push(newFolder);
     },
-    changeFolder(state, {oldFolder, newFolder}) {
-      state.folders = state.folders.map((folder) =>
-        folder === oldFolder && (folder = newFolder)
-      );
+    changeFolder(state, {oldName, newFolder}) {
+      state.folders = state.folders.map((folder) => {
+        if (folder.data.name === oldName) folder = newFolder;
+        return folder;
+      });
     },
     removeFolder(state, folderToRemove) {
       state.folders = state.folders.filter(
@@ -98,6 +118,28 @@ export default {
         if (folder === rootFolder) folder.cards.push(newCard);
         return folder;
       });
+    },
+    changeCard(state, {oldTerm, newCard, rootFolder}) {
+      state.folders = state.folders.map((folder) => {
+        if (folder === rootFolder) {
+          folder.cards.map(
+            (card) => {
+              if (card.term === oldTerm) card = newCard;
+              return card;
+            }
+          )
+        }
+        return folder;
+      });
+    },
+    removeCard(state, { rootFolder, cardToRemove }) {
+      state.folders = state.folders.map(
+        (folder) => {
+          if (folder === rootFolder)
+            folder.cards = folder.cards.filter((card) => (card !== cardToRemove));
+          return folder;
+        }
+      );
     },
   },
   state: {

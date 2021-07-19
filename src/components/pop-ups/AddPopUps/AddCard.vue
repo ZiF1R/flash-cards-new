@@ -112,4 +112,37 @@ export default {
     margin-bottom: 3vh
     width: 100%
     border-bottom: 1px solid #000
+
+.button
+    font-style: normal
+    font-weight: normal
+    font-size: 16px
+    line-height: 28px
+
+    border-radius: 5px
+    padding: 1.3vh 4vw
+
+    cursor: pointer
+    color: #fff
+    background: none
+    border: none
+    outline: none
+
+.create
+    background-color: #00A3FF
+
+    &:hover
+      background-color: lighten(#00A3FF, 5%)
+
+    &:active
+      background-color: darken(#00A3FF, 5%)
+
+.cancel
+    background-color: #DA2929
+
+    &:hover
+      background-color: lighten(#DA2929, 5%)
+
+    &:active
+      background-color: darken(#DA2929, 5%)
 </style>

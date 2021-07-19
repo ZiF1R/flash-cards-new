@@ -20,6 +20,7 @@
 
     <img
       v-if="cardsLength > 0"
+      @click.left="showReview = true"
       class="folder__review"
       :title="localize('You can practice words from this folder')"
       src="@/assets/home/play-button.svg"
@@ -34,8 +35,8 @@
   <EditFolder
     v-if="showEdit"
     :locale="locale"
-    @close="showEdit = false"
     :folder="folder"
+    @close="showEdit = false"
   />
   <ConfirmFolder
     v-if="showConfirm"
@@ -43,12 +44,19 @@
     @close="showConfirm = false"
     @confirmed="removeFolder"
   />
+  <Review
+    v-if="showReview"
+    :locale="locale"
+    :folder="folder"
+    @close="showReview = false"
+  />
 </template>
 
 <script>
 import localizeFilter from "@/locale/locale";
 import ConfirmFolder from "@/components/pop-ups/ConfirmPopUps/ConfirmFolder";
 import EditFolder from "@/components/pop-ups/EditPopUps/EditFolder";
+import Review from "@/components/Review";
 
 export default {
   name: "FolderCardHead",
@@ -85,10 +93,12 @@ export default {
   components: {
     ConfirmFolder,
     EditFolder,
+    Review,
   },
 
   data() {
     return {
+      showReview: false,
       canReviewMessage: "",
       canReviewIconSrc: "",
       showConfirm: false,

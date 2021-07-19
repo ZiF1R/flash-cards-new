@@ -1,33 +1,49 @@
 <template>
   <div class="card__head">
-    <div class="card__settings" @click="$emit(`showSettings`)">
-      <img class="settings__icon" src="@/assets/home/settings_folder.svg" />
-      <div v-if="activeSettings" class="settings-wrapper">
-        <div class="setting" v-for="setting in settings" :key="setting.text">
-          <CardSetting
-            :locale="locale"
-            :icon="setting.icon"
-            :text="setting.text"
-            @tap="setting.func.call(this)"
-          />
-        </div>
-        <!-- <div class="setting" @click.left="copyExamples(card.examples)">
-          <div class="copy__icon"></div>
-          <div class="copy__text">
-            {{ localize("Copy examples") }}
-          </div>
-        </div> -->
+    <div class="card__settings">
+      <img
+        class="settings__icon"
+        src="@/assets/home/settings_folder.svg"
+        @click="$emit(`showSettings`)"
+      />
+      <div
+        v-if="activeSettings"
+        class="settings-wrapper"
+        @click="$emit('showSettings')"
+      >
+        <CardSetting
+          v-for="setting in settings"
+          :key="setting.text"
+          :locale="locale"
+          :icon="setting.icon"
+          :text="setting.text"
+          @tap="setting.func.call(this)"
+        />
       </div>
     </div>
   </div>
   <div v-if="copiedToClipboard" class="pop-up">
     {{ localize(`The ${copiedPart} has been copied to the clipboard`) }}.
   </div>
+  <EditCard
+    v-if="openEdit"
+    :locale="locale"
+    :card="card"
+    @close="openEdit = false"
+  />
+  <ConfirmCard
+    v-if="showConfirm"
+    :locale="locale"
+    @close="showConfirm = false"
+    @confirmed="removeCard"
+  />
 </template>
 
 <script>
 import localizeFilter from "@/locale/locale";
 import CardSetting from "@/components/card-components/CardSetting";
+import EditCard from "@/components/pop-ups/EditPopUps/EditCard";
+import ConfirmCard from "@/components/pop-ups/ConfirmPopUps/ConfirmCard";
 
 export default {
   name: "CardHead",
@@ -59,19 +75,23 @@ export default {
 
   components: {
     CardSetting,
+    EditCard,
+    ConfirmCard,
   },
+
+  emits: ["showSettings", "removeCard"],
 
   data() {
     return {
+      showConfirm: false,
+      openEdit: false,
       copiedToClipboard: false,
       copiedPart: "",
       settings: [
         {
           text: "Edit",
           icon: "edit",
-          func: () => {
-            alert(this.card.term);
-          },
+          func: () => (this.openEdit = true),
         },
         {
           text: "Copy all",
@@ -111,21 +131,25 @@ export default {
         {
           text: "Remove",
           icon: "remove",
+          func: () => (this.showConfirm = true),
         },
       ],
     };
   },
 
-  emits: ["showSettings"],
-
   methods: {
     localize(frase) {
       return localizeFilter[this.locale][frase] || frase;
+    },
+    removeCard() {
+      this.showConfirm = false;
+      this.$emit("removeCard");
     },
   },
 
   watch: {
     copiedPart() {
+      this.copiedToClipboard = true;
       setTimeout(() => (this.copiedToClipboard = false), 3000);
     },
   },
@@ -174,18 +198,6 @@ export default {
   -webkit-user-select: none
   -ms-user-select: none
 
-  .setting
-    display: flex
-    flex-direction: row
-    text-align: left
-    align-items: center
-    width: calc( 100% - 2vw )
-    height: 3vh
-    padding: 0.2vh 1vw
-
-    &:hover
-      background: darken(#fff, 3%)
-
 .settings__icon
   margin-right: 0.5vw
   width: 17px
@@ -215,20 +227,17 @@ export default {
   width: 1.1vw
 
 .pop-up
-  display: flex
   position: fixed
-  flex-direction: column
-  justify-content: center
-  align-items: center
-  background: #e9e9e9
+
+  padding: 2vh 3.5vw
+  bottom: 5%
+  left: 43%
 
   font-style: normal
   font-weight: 300
   font-size: 16px
   line-height: 16px
 
-  padding: 2vh 3.5vw
-  bottom: 5%
-  left: 43%
+  background: #e9e9e9
   z-index: 20
 </style>

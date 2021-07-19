@@ -91,7 +91,12 @@ export default {
   //todo!: vuelidate
 
   methods: {
-    ...mapActions(["login"]),
+    ...mapActions(["login", "fetchUser", "fetchFolders", "fetchCategories"]),
+    async loadData() {
+      await this.fetchUser();
+      await this.fetchFolders();
+      await this.fetchCategories();
+    },
     async signIn() {
       let answer = await this.login(this.loginData);
       if (typeof answer === "string") {
@@ -99,6 +104,8 @@ export default {
         return 0;
       }
       this.errorMessage = "";
+
+      await this.loadData();
       this.$router.push("/profile");
     },
     showPass() {

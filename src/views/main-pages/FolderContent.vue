@@ -41,6 +41,7 @@
         </div>
         <AddCardButton :locale="locale" @createCard="createCard($event)" />
       </div>
+      <span class="space">1</span>
     </template>
   </routes-temp>
 </template>
@@ -164,6 +165,18 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.head__icon
+    height: 100%
+    width: 3.5vw
+    margin-right: 1vw
+
+.head__text
+    margin-top: 1vh
+    font-style: normal
+    font-weight: normal
+    font-size: 30px
+    line-height: 46px
+
 .path
   display: flex
   position: relative
@@ -244,21 +257,6 @@ export default {
   background: #fff
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1)
 
-.pop-up
-  display: flex
-  position: fixed
-  flex-direction: column
-  justify-content: center
-  align-items: center
-  background: #e9e9e9
-
-  font-style: normal
-  font-weight: 300
-  font-size: 16px
-  line-height: 16px
-
-  padding: 2vh 3.5vw
-  bottom: 5%
-  left: 43%
-  z-index: 20
+.space
+  visibility: hidden
 </style>

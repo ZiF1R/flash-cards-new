@@ -132,13 +132,13 @@ export default {
       await _db.logout();
       this.$router.push("/login");
     },
-    saveChanges() {
+    async saveChanges() {
       if (
         this.localUser.Name &&
         this.localUser.Last_name &&
         this.localUser.Nickname
       )
-        this.sendUserData(this.localUser);
+        await this.sendUserData(this.localUser);
     },
     showPass() {
       const markers = document.querySelector(".pass");

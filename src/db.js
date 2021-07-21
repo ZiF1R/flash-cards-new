@@ -201,6 +201,19 @@ const removeCard = async (folderName, cardTerm) => {
     .remove();
 };
 
+const sendReviewResult = async (card, folderData) => {
+  const uid = await getUid();
+  await firebase
+    .database()
+    .ref(`/users/${uid}/folders/${folderData.name}/cards/${card.term}`)
+    .set({ ...card });
+
+  await firebase
+    .database()
+    .ref(`/users/${uid}/folders/${folderData.name}/data/`)
+    .set({ ...folderData });
+};
+
 export const _db = {
   getUid,
   login,
@@ -218,4 +231,5 @@ export const _db = {
   sendCard,
   editCard,
   removeCard,
+  sendReviewResult,
 };

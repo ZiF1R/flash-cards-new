@@ -42,4 +42,7 @@ const createDeck = (deck, size) => {
   return deck;
 };
 
-export const _review = { createDeck };
+const check = (userAnswer, exeptedAnswer) =>
+  userAnswer.toLowerCase() === exeptedAnswer.toLowerCase();
+
+export const _review = { createDeck, check };

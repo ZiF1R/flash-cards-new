@@ -2,16 +2,12 @@
   <pop-up-temp @close="$emit('close')">
     <template v-slot:popup__content>
       <span class="notify">
-        {{
-          localize(
-            "After deleting the folder, it will be impossible to restore the data! Are you sure about this"
-          )
-        }}
+        <slot name="confirm__message"></slot>
       </span>
     </template>
     <template v-slot:popup__buttons>
       <button class="button confirm" @click.left="$emit('confirmed')">
-        {{ localize("Remove") }}
+        <slot name="confirm-button__text"></slot>
       </button>
       <button class="button reject" @click.left="$emit('close')">
         {{ localize("Cancel") }}

@@ -38,12 +38,23 @@
     :folder="folder"
     @close="showEdit = false"
   />
-  <ConfirmFolder
+  <Confirm
     v-if="showConfirm"
     :locale="locale"
     @close="showConfirm = false"
     @confirmed="removeFolder"
-  />
+  >
+    <template v-slot:confirm__message>
+      {{
+        localize(
+          "After deleting the folder, it will be impossible to restore the data! Are you sure about this"
+        )
+      }}
+    </template>
+    <template v-slot:confirm-button__text>
+      {{ localize("Remove") }}
+    </template>
+  </Confirm>
   <Review
     v-if="showReview"
     :locale="locale"
@@ -54,7 +65,7 @@
 
 <script>
 import localizeFilter from "@/locale/locale";
-import ConfirmFolder from "@/components/pop-ups/ConfirmPopUps/ConfirmFolder";
+import Confirm from "@/components/pop-ups/ConfirmPopUps/Confirm";
 import EditFolder from "@/components/pop-ups/EditPopUps/EditFolder";
 import Review from "@/components/Review";
 
@@ -91,7 +102,7 @@ export default {
   emits: ["showSettings", "removeFolder"],
 
   components: {
-    ConfirmFolder,
+    Confirm,
     EditFolder,
     Review,
   },

@@ -31,19 +31,30 @@
     :card="card"
     @close="openEdit = false"
   />
-  <ConfirmCard
+  <Confirm
     v-if="showConfirm"
     :locale="locale"
     @close="showConfirm = false"
     @confirmed="removeCard"
-  />
+  >
+    <template v-slot:confirm__message>
+      {{
+        localize(
+          "After deleting the card, it will be impossible to restore the data! Are you sure about this"
+        )
+      }}
+    </template>
+    <template v-slot:confirm-button__text>
+      {{ localize("Remove") }}
+    </template>
+  </Confirm>
 </template>
 
 <script>
 import localizeFilter from "@/locale/locale";
 import CardSetting from "@/components/card-components/CardSetting";
 import EditCard from "@/components/pop-ups/EditPopUps/EditCard";
-import ConfirmCard from "@/components/pop-ups/ConfirmPopUps/ConfirmCard";
+import Confirm from "@/components/pop-ups/ConfirmPopUps/Confirm";
 
 export default {
   name: "CardHead",
@@ -76,7 +87,7 @@ export default {
   components: {
     CardSetting,
     EditCard,
-    ConfirmCard,
+    Confirm,
   },
 
   emits: ["showSettings", "removeCard"],

@@ -46,7 +46,7 @@
     .input
       font-style: normal
       font-weight: 300
-      font-size: 19px
+      font-size: 1.1875em
       line-height: 28px
 
       border: none
@@ -59,7 +59,7 @@
 .auth-text
   font-style: normal
   font-weight: 300
-  font-size: 26px
+  font-size: 1.625em
   line-height: 42px
   margin-bottom: 3.5vh
 
@@ -99,7 +99,7 @@
 .auth-link
   font-style: normal
   font-weight: 300
-  font-size: 14px
+  font-size: 0.875em
   line-height: 22px
 
 .to-login
@@ -111,7 +111,7 @@
 .finish
   font-style: normal
   font-weight: normal
-  font-size: 16px
+  font-size: 1em
   line-height: 28px
 
   border-radius: 5px
@@ -145,7 +145,7 @@
 .err-data
   font-style: normal
   font-weight: 300
-  font-size: 14px
+  font-size: 0.875em
   line-height: 24px
   margin-top: 2vh
   color: #DA2929

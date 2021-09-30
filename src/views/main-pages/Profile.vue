@@ -173,7 +173,7 @@ export default {
     margin-top: 1vh
     font-style: normal
     font-weight: normal
-    font-size: 30px
+    font-size: 1.875em
     line-height: 46px
 
 .input
@@ -185,7 +185,7 @@ export default {
 
   font-style: normal
   font-weight: 300
-  font-size: 19px
+  font-size: 1.1875em
   line-height: 28px
 
   border: none
@@ -251,7 +251,7 @@ export default {
 .btn
   font-style: normal
   font-weight: normal
-  font-size: 16px
+  font-size: 1em
   line-height: 28px
 
   border-radius: 5px

@@ -156,7 +156,7 @@ nav
   flex-direction: column
   justify-content: flex-start
 
-  width: calc( 100% - 2.2vw )
+  width: 100%
   height: auto
   padding-top: 6vh
 
@@ -179,7 +179,7 @@ nav
 
   font-style: normal
   font-weight: 200
-  font-size: 20px
+  font-size: 1.25em
   line-height: 33px
 
 .img1
@@ -204,13 +204,21 @@ nav
   width: 45px
   height: 45px
 
+  @media screen and (max-width: 1100px) and (min-width: 900px)
+    width: 40px
+    height: 40px
+
   .img
-    width: 47%
-    height: 47%
+    width: 23px
+    height: 23px
     background-position: center center
     background-repeat: no-repeat
     background-size: contain
     filter: opacity(27%)
+
+    @media screen and (max-width: 1100px) and (min-width: 900px)
+      width: 19px
+      height: 19px
 
 a
   color: #000
@@ -251,24 +259,29 @@ a
 
   font-style: normal
   font-weight: 300
-  font-size: 14px
+  font-size: 0.875em
   line-height: 21px
 
   .footer__help-btn
     position: relative
     background: $blue
-    width: calc( 100% - 6vw )
+    width: calc( 100% - 5vw )
+    align-self: center
 
     margin-bottom: 3vh
-    padding: 1.7vh 3vw
+    padding: 1.7vh 2.5vw
 
     color: #fff
     text-align: center
     font-weight: normal
-    font-size: 17px
+    font-size: 1.0625em
     line-height: 28px
 
     border-radius: 5px
+
+    @media screen and (max-width: 1100px) and (min-width: 900px)
+      width: calc( 100% - 4vw )
+      padding: 1.5vh 2vw
 
     &:hover
       background: lighten($blue, 6%)

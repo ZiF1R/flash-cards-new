@@ -200,7 +200,7 @@ export default {
 
   font-style: normal
   font-weight: normal
-  font-size: 12px
+  font-size: 0.75em
   line-height: 16px
 
   z-index: 10
@@ -246,7 +246,7 @@ export default {
 
   font-style: normal
   font-weight: 300
-  font-size: 16px
+  font-size: 1em
   line-height: 16px
 
   background: #e9e9e9

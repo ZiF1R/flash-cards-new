@@ -287,7 +287,7 @@ export default {
   text-align: center
   font-style: normal
   font-weight: 400
-  font-size: 22px
+  font-size: 1.375em
   line-height: 28px
 
   display: -webkit-box
@@ -319,7 +319,7 @@ export default {
 .answer, .examples
   font-weight: 300
   line-height: 20px
-  font-size: 16px
+  font-size: 1em
   margin-top: 0.5vh
 
 .examples
@@ -328,7 +328,7 @@ export default {
 .input
   font-style: normal
   font-weight: 300
-  font-size: 19px
+  font-size: 1.1875em
   line-height: 28px
 
   border: none
@@ -349,7 +349,7 @@ export default {
   > *
     font-style: normal
     font-weight: normal
-    font-size: 16px
+    font-size: 1em
     line-height: 28px
 
     border-radius: 5px
@@ -382,7 +382,7 @@ export default {
 .notification
   display: flex
   width: 100%
-  font-size: 14px
+  font-size: 0.875em
   line-height: 20px
   font-weight: 300
   color: #000
@@ -396,6 +396,6 @@ export default {
 .total
   text-align: center
   font-weight: 300
-  font-size: 16px
+  font-size: 1em
   color: #999
 </style>

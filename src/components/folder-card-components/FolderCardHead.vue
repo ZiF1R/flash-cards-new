@@ -193,7 +193,7 @@ export default {
 
   font-style: normal
   font-weight: normal
-  font-size: 12px
+  font-size: 0.75em
   line-height: 16px
 
   user-select: none

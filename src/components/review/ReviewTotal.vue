@@ -102,7 +102,7 @@ export default {
 
   font-style: normal
   font-weight: 300
-  font-size: 18px
+  font-size: 1.125em
   line-height: 25px
   margin-top: 2vh
 
@@ -127,7 +127,7 @@ export default {
   > *
     font-style: normal
     font-weight: normal
-    font-size: 16px
+    font-size: 1em
     line-height: 28px
 
     border-radius: 5px

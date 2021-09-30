@@ -98,7 +98,7 @@ export default {
 .pop-up__title
   font-style: normal
   font-weight: 300
-  font-size: 26px
+  font-size: 1.625em
   line-height: 42px
   margin-bottom: 3.5vh
 

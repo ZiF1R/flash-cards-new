@@ -64,21 +64,21 @@ export default {
 .card__term
   font-style: normal
   font-weight: normal
-  font-size: 16px
+  font-size: 1em
   line-height: 22px
   margin-bottom: 0.2vh
 
 .card__definition
   font-style: normal
   font-weight: 300
-  font-size: 16px
+  font-size: 1em
   line-height: 18px
   margin-bottom: 0.7vh
 
 .card__examples
   font-style: italic
   font-weight: 300
-  font-size: 14px
+  font-size: 0.875em
   line-height: 18px
 
 .card__date
@@ -93,7 +93,7 @@ export default {
 
   font-style: normal
   font-weight: 300
-  font-size: 12px
+  font-size: 0.75em
   line-height: 16px
   color: rgba(0, 0, 0, 0.5)
 </style>

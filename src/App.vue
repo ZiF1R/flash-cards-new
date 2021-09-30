@@ -76,4 +76,8 @@ h1, h2, h3, h4, h5, h6
   margin-left: 26vw
   width: 66vw
   min-height: 100vh
+
+@media screen and (max-width: 1100px) and (min-width: 900px)
+  body
+    font-size: 14px
 </style>

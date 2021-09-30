@@ -120,7 +120,7 @@ export default {
 
   font-style: normal
   font-weight: 300
-  font-size: 16px
+  font-size: 1em
   line-height: 28px
 
 .lang__current

@@ -47,14 +47,14 @@ export default {
   font-style: normal
   font-weight: normal
   font-weight: 300
-  font-size: 20px
+  font-size: 1.25em
   line-height: 24px
   text-align: left
 
 button
   font-style: normal
   font-weight: normal
-  font-size: 16px
+  font-size: 1em
   line-height: 28px
 
   border-radius: 5px

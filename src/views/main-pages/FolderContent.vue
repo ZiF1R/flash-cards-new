@@ -174,7 +174,7 @@ export default {
     margin-top: 1vh
     font-style: normal
     font-weight: normal
-    font-size: 30px
+    font-size: 1.875em
     line-height: 46px
 
 .path
@@ -185,7 +185,7 @@ export default {
 
   font-style: normal
   font-weight: 300
-  font-size: 16px
+  font-size: 1em
   line-height: 20px
 
   margin-top: 0.7vh
@@ -203,7 +203,7 @@ export default {
 
   font-style: normal
   font-weight: normal
-  font-size: 17px
+  font-size: 1.0625em
   line-height: 24px
 
   width: fit-content

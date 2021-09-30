@@ -105,7 +105,7 @@ export default {
 .input
     font-style: normal
     font-weight: 300
-    font-size: 19px
+    font-size: 1.1875em
     line-height: 28px
 
     border: none
@@ -120,7 +120,7 @@ export default {
     justify-content: flex-start
     font-style: normal
     font-weight: 300
-    font-size: 19px
+    font-size: 1.1875em
     line-height: 28px
 
     width: 100%
@@ -130,7 +130,7 @@ export default {
     flex: 1 0 auto
     font-style: normal
     font-weight: 300
-    font-size: 16px
+    font-size: 1em
     line-height: 28px
 
     color: rgba(0, 0, 0, 0.7)
@@ -141,7 +141,7 @@ export default {
 .add-category
     font-style: normal
     font-weight: 300
-    font-size: 16px
+    font-size: 1em
     line-height: 28px
 
     padding: 0.2vh 0
@@ -162,7 +162,7 @@ export default {
 button
   font-style: normal
   font-weight: normal
-  font-size: 16px
+  font-size: 1em
   line-height: 28px
 
   border-radius: 5px
@@ -195,7 +195,7 @@ button
 .add-category
     font-style: normal
     font-weight: 300
-    font-size: 16px
+    font-size: 1em
     line-height: 28px
 
     padding: 0.2vh 0

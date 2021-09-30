@@ -79,19 +79,19 @@ export default {
   cursor: pointer
   font-style: normal
   font-weight: normal
-  font-size: 16px
+  font-size: 1em
   line-height: 24px
 
 .folder__category
   font-style: normal
   font-weight: 300
-  font-size: 14px
+  font-size: 0.875em
   line-height: 18px
 
 .folder__memorized
   font-style: normal
   font-weight: 300
-  font-size: 14px
+  font-size: 0.875em
   line-height: 18px
 
 .folder__date
@@ -106,7 +106,7 @@ export default {
 
   font-style: normal
   font-weight: 300
-  font-size: 12px
+  font-size: 0.75em
   line-height: 16px
   color: rgba(0, 0, 0, 0.5)
 </style>

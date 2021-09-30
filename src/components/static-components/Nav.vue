@@ -157,7 +157,7 @@ nav
   justify-content: flex-start
 
   width: calc( 100% - 2.2vw )
-  height: calc( 65vh - 6vh )
+  height: auto
   padding-top: 6vh
 
 .router-link
@@ -177,8 +177,6 @@ nav
   align-items: center
   justify-content: flex-start
 
-  // width: 80%
-  // height: 100%
   font-style: normal
   font-weight: 200
   font-size: 20px
@@ -213,7 +211,6 @@ nav
     background-repeat: no-repeat
     background-size: contain
     filter: opacity(27%)
-    // transform: translate(0.5px, -0.5px)
 
 a
   color: #000
@@ -243,11 +240,14 @@ a
 
 .nav__footer
   display: flex
+  position: absolute
   flex-direction: column
   justify-content: flex-start
 
   width: calc( 20vw - 4.4vw )
   padding: 0 2.2vw
+  margin-bottom: 3vh
+  bottom: 0
 
   font-style: normal
   font-weight: 300

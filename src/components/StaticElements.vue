@@ -1,18 +1,27 @@
 <template>
-  <app-nav :locale="locale" />
-  <scroll-lang :locale="locale" @changeLang="changeLang($event)" />
+  <div>
+    <app-nav :locale="locale" />
+    <lang
+      class="lang-component"
+      :locale="locale"
+      @changeLang="changeLang($event)"
+    />
+  </div>
+  <scroll />
 </template>
 
 <script>
 import AppNav from "@/components/static-components/Nav";
-import ScrollLang from "@/components/static-components/ScrollLang";
+import Scroll from "@/components/static-components/Scroll";
+import Lang from "@/components/static-components/Lang";
 
 export default {
   name: "StaticElements",
 
   components: {
     AppNav,
-    ScrollLang,
+    Scroll,
+    Lang,
   },
 
   props: {
@@ -31,3 +40,14 @@ export default {
   },
 };
 </script>
+
+<style lang="sass">
+.lang-component
+  right: 0vw
+  top: 2vh
+  position: fixed
+  margin: 3vh 2vw
+  user-select: none
+  -moz-user-select: -moz-none
+  -webkit-user-select: none
+</style>

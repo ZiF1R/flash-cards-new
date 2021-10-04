@@ -1,7 +1,7 @@
 <template>
-  <app-nav class="nav" :locale="locale" />
+  <app-nav class="nav" :locale="locale" @closeNav="changeNavVisibility" />
   <div class="panel">
-    <button @click="showNav">
+    <button @click="changeNavVisibility">
       <img src="@/assets/home/menu.svg" alt="menu" />
     </button>
     <lang
@@ -40,8 +40,8 @@ export default {
     changeLang(lang) {
       this.$emit("changeLang", lang);
     },
-    showNav() {
-      document.body.querySelector("nav").classList.toggle("nav_show");
+    changeNavVisibility() {
+      document.body.querySelector(".nav").classList.toggle("nav_show");
     },
   },
 };

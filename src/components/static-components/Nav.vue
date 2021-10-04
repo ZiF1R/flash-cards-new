@@ -1,40 +1,42 @@
 <template>
-  <nav>
-    <div class="nav__logo"></div>
-    <span class="nav__line"></span>
-    <div class="nav__links">
-      <div
-        @click.left="activeLink = link"
-        class="links__link"
-        :class="{ link_active: activeLink === link }"
-        v-for="(link, index) in links"
-        :key="index"
-      >
-        <nav-link
-          :locale="locale"
-          :path="links[index].path"
-          :link_id="links[index].id"
-          :link_name="links[index].name"
-        />
+  <div class="overlay" @click.self="$emit('closeNav')">
+    <nav>
+      <div class="nav__logo"></div>
+      <span class="nav__line"></span>
+      <div class="nav__links">
+        <div
+          @click.left="activeLink = link"
+          class="links__link"
+          :class="{ link_active: activeLink === link }"
+          v-for="(link, index) in links"
+          :key="index"
+        >
+          <nav-link
+            :locale="locale"
+            :path="links[index].path"
+            :link_id="links[index].id"
+            :link_name="links[index].name"
+          />
+        </div>
       </div>
-    </div>
 
-    <div class="nav__footer">
-      <router-link class="footer__help-btn" to="/help">
-        {{ localize("Need help") }}?
-      </router-link>
-      <a target="blank" href="https://policies.google.com/privacy?hl=en-US">
-        {{ localize("Privacy Policy") }}
-      </a>
-      <a target="blank" href="https://policies.google.com/terms?hl=en">
-        {{ localize("Terms and Conditions") }}
-      </a>
-      <div class="footer__copyright">
-        Copyright &copy; 2021, created by
-        <a target="blank" href="https://vk.com/sashadobriyan">Z1FiR</a>
+      <div class="nav__footer">
+        <router-link class="footer__help-btn" to="/help">
+          {{ localize("Need help") }}?
+        </router-link>
+        <a target="blank" href="https://policies.google.com/privacy?hl=en-US">
+          {{ localize("Privacy Policy") }}
+        </a>
+        <a target="blank" href="https://policies.google.com/terms?hl=en">
+          {{ localize("Terms and Conditions") }}
+        </a>
+        <div class="footer__copyright">
+          Copyright &copy; 2021, created by
+          <a target="blank" href="https://vk.com/sashadobriyan">Z1FiR</a>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
 </template>
 
 <script>
@@ -47,6 +49,8 @@ export default {
   components: {
     NavLink,
   },
+
+  emits: ["closeNav"],
 
   props: {
     locale: {
@@ -121,10 +125,24 @@ nav
 
   height: calc( 100vh - 60px )
   width: calc( 20vw - 40px )
-  min-width: 185px
+  min-width: 200px
   padding: 30px 20px
   padding-left: 0
   box-shadow: -3px 0 15px rgba(0, 0, 0, 0.2)
+  background: #fff
+
+.overlay
+  display: none
+  position: fixed
+  top: 0
+  bottom: 0
+  right: 0
+  left: 0
+
+  @media screen and (max-width: 901px)
+    display: block
+    background: rgba(0, 0, 0, 0.3)
+    z-index: 99
 
 .nav__line
   display: block
@@ -148,8 +166,8 @@ nav
   background-repeat: no-repeat
   background-size: contain
 
-  width: calc( 100% - 2.2vw )
-  margin-left: 2.2vw
+  width: calc( 100% - 20px )
+  margin-left: 20px
   height: 6vh
 
 .nav__links
@@ -258,7 +276,7 @@ a
   justify-content: flex-start
 
   width: calc( 20vw - 40px )
-  min-width: 165px
+  min-width: 180px
   padding: 0 20px
   margin-bottom: 3vh
   bottom: 0

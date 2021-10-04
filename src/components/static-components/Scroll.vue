@@ -66,6 +66,9 @@ export default {
   -moz-user-select: -moz-none
   -webkit-user-select: none
 
+  @media screen and (max-width: 601px)
+    display: none
+
 .scroll > div
   display: flex
   justify-content: center

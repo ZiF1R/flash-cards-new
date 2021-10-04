@@ -1,6 +1,9 @@
 <template>
-  <div>
-    <app-nav :locale="locale" />
+  <app-nav class="nav" :locale="locale" />
+  <div class="panel">
+    <button @click="showNav">
+      <img src="@/assets/home/menu.svg" alt="menu" />
+    </button>
     <lang
       class="lang-component"
       :locale="locale"
@@ -37,17 +40,66 @@ export default {
     changeLang(lang) {
       this.$emit("changeLang", lang);
     },
+    showNav() {
+      document.body.querySelector("nav").classList.toggle("nav_show");
+    },
   },
 };
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 .lang-component
   right: 0vw
   top: 2vh
   position: fixed
-  margin: 3vh 2vw
+  margin: 2vh 2vw
   user-select: none
   -moz-user-select: -moz-none
   -webkit-user-select: none
+
+.panel > button
+  display: none
+  background: #00A3FF
+  outline: none
+  border: none
+  width: 40px
+  height: 100%
+  cursor: pointer
+
+  img
+    filter: invert(1)
+    width: 65%
+    height: 65%
+
+@media screen and (max-width: 900px)
+  .nav
+    display: none
+
+  .nav_show
+    display: flex
+
+  .panel
+    display: flex
+    position: relative
+    justify-content: space-between
+
+    background: #fff
+    width: 100vw
+    height: 40px
+
+    & > button
+      display: flex
+      justify-content: center
+      align-items: center
+
+  .lang-component
+    position: relative
+    border-left: 1px solid #d6d6d6
+
+    width: 40px
+    height: 100%
+
+    margin: 0
+    padding: 0 7px 0 15px
+    top: 0
 </style>

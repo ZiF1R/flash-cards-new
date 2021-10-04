@@ -60,11 +60,8 @@ export default {
   display: flex
   flex-direction: column
   align-items: center
-  justify-content: space-between
 
   position: relative
-  width: 3vw
-  height: 4vh
   cursor: pointer
 
   font-style: normal
@@ -77,13 +74,13 @@ export default {
   display: flex
   flex-direction: row
   align-items: center
-  justify-content: space-between
-  width: 100%
   height: 100%
 
 .lang__arrow
-  width: 30%
-  height: 100%
+  width: 10px
+  height: 10px
+  margin-left: 7px
+
   background-image: url('../../assets/home/down-arrow.svg')
   background-position: center center
   background-repeat: no-repeat
@@ -91,12 +88,13 @@ export default {
 
 .lang__list
   display: flex
-  position: relative
+  position: absolute
   flex-direction: column
   align-items: center
 
-  width: 5vw
+  width: 55px
   height: auto
+  top: 100%
 
   background: #fff
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1)

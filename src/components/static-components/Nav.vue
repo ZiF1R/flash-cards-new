@@ -35,7 +35,6 @@
       </div>
     </div>
   </nav>
-  <!-- <button class="open-menu"></button> -->
 </template>
 
 <script>
@@ -118,10 +117,12 @@ nav
   position: fixed
   flex-direction: column
   float: left
+  z-index: 100
 
-  height: calc( 100vh - 6vh )
-  width: calc( 20vw - 2.2vw )
-  padding: 3vh 2.2vw
+  height: calc( 100vh - 60px )
+  width: calc( 20vw - 40px )
+  min-width: 185px
+  padding: 30px 20px
   padding-left: 0
   box-shadow: -3px 0 15px rgba(0, 0, 0, 0.2)
 
@@ -167,7 +168,7 @@ nav
   align-items: center
   justify-content: flex-start
 
-  padding-left: 2.2vw
+  padding-left: 20px
   width: 100%
   height: 7vh
   cursor: pointer
@@ -200,12 +201,12 @@ nav
   background: #f1f1f1
   border-radius: 50%
 
-  margin-right: 1vw
+  margin-right: 10px
 
   width: 45px
   height: 45px
 
-  @media screen and (max-width: 1100px) and (min-width: 900px)
+  @media screen and (max-width: 1100px)
     width: 40px
     height: 40px
 
@@ -217,7 +218,7 @@ nav
     background-size: contain
     filter: opacity(27%)
 
-    @media screen and (max-width: 1100px) and (min-width: 900px)
+    @media screen and (max-width: 1100px)
       width: 19px
       height: 19px
 
@@ -243,9 +244,12 @@ a
       content: ""
 
       height: 100%
-      width: 0.5vw
+      width: 6px
       left: 0%
       background: $blue
+
+      @media screen and (max-width: 501px)
+        width: 5px
 
 .nav__footer
   display: flex
@@ -253,8 +257,9 @@ a
   flex-direction: column
   justify-content: flex-start
 
-  width: calc( 20vw - 4.4vw )
-  padding: 0 2.2vw
+  width: calc( 20vw - 40px )
+  min-width: 165px
+  padding: 0 20px
   margin-bottom: 3vh
   bottom: 0
 
@@ -266,11 +271,11 @@ a
   .footer__help-btn
     position: relative
     background: $blue
-    width: calc( 100% - 5vw )
+    width: calc( 100% - 40px )
     align-self: center
 
     margin-bottom: 3vh
-    padding: 1.7vh 2.5vw
+    padding: 10px 20px
 
     color: #fff
     text-align: center
@@ -280,7 +285,7 @@ a
 
     border-radius: 5px
 
-    @media screen and (max-width: 1100px) and (min-width: 900px)
+    @media screen and (max-width: 1100px)
       width: calc( 100% - 4vw )
       padding: 1.5vh 2vw
 

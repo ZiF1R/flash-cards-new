@@ -164,6 +164,9 @@ export default {
 .space
   margin-bottom: 5vh
 
+  @media screen and (max-width: 901px)
+    margin-bottom: 2vh
+
 .profile__content
   display: flex
   position: relative

@@ -275,7 +275,7 @@ a
   flex-direction: column
   justify-content: flex-start
 
-  width: calc( 20vw - 40px )
+  width: calc( 20vw - 60px )
   min-width: 180px
   padding: 0 20px
   margin-bottom: 3vh

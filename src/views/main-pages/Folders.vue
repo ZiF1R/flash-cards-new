@@ -82,6 +82,9 @@ export default {
 .space
   margin-bottom: 5vh
 
+  @media screen and (max-width: 901px)
+    margin-bottom: 2vh
+
 .head__icon
     height: 100%
     width: 3.5vw

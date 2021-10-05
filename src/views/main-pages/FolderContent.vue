@@ -10,7 +10,7 @@
           {{ localize("Folders") }}
         </router-link>
         <img src="@/assets/folder/left-arrow.svg" class="arrow" />
-        <span class="currrent-folder">
+        <span class="current-folder">
           {{ $router.currentRoute._value.params.folder_name }}
         </span>
       </div>

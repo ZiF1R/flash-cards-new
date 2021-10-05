@@ -31,7 +31,6 @@
   -ms-user-select: none
 
 .pageUnderline
-  // margin-top: 5vh
   width: 40%
 
 // .page__content

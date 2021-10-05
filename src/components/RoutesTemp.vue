@@ -5,6 +5,7 @@
     </div>
     <slot name="page_path"></slot>
     <slot name="page_filters"></slot>
+    <slot name="space"></slot>
     <hr class="pageUnderline" />
     <slot name="page_content"></slot>
     <!-- <div class="page__content">

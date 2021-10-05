@@ -4,6 +4,9 @@
       <img src="@/assets/home/folderIcon.svg" class="head__icon" />
       <span class="head__text">{{ localize("Folders") }}</span>
     </template>
+    <template v-slot:space>
+      <div class="space"></div>
+    </template>
     <template v-slot:page_content>
       <div class="home__content">
         <div
@@ -76,6 +79,9 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.space
+  margin-bottom: 5vh
+
 .head__icon
     height: 100%
     width: 3.5vw

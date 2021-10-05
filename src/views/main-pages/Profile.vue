@@ -4,6 +4,9 @@
       <img src="@/assets/home/profileIcon.svg" class="head__icon" />
       <div class="head__text">{{ localize("Profile") }}</div>
     </template>
+    <template v-slot:space>
+      <div class="space"></div>
+    </template>
     <template v-slot:page_content>
       <div class="profile__content">
         <div class="input-wrapper">
@@ -158,6 +161,9 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.space
+  margin-bottom: 5vh
+
 .profile__content
   display: flex
   position: relative

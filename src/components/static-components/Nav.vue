@@ -132,17 +132,17 @@ nav
   background: #fff
 
 .overlay
-  display: none
+  display: block
+  background: unset
   position: fixed
-  top: 0
-  bottom: 0
-  right: 0
-  left: 0
 
   @media screen and (max-width: 901px)
-    display: block
     background: rgba(0, 0, 0, 0.3)
     z-index: 99
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
 
 .nav__line
   display: block

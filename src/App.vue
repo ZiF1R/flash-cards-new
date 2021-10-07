@@ -85,11 +85,7 @@ h1, h2, h3, h4, h5, h6
     margin-left: 20px
     width: calc(100vw - 20px)
 
-@media screen and (max-width: 1200px) and (min-width: 501px)
+@media screen and (max-width: 1200px)
   body
     font-size: 14px
-
-@media screen and (max-width: 501px)
-  body
-    font-size: 12px
 </style>

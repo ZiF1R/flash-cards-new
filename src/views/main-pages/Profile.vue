@@ -162,10 +162,7 @@ export default {
 
 <style lang="sass" scoped>
 .space
-  margin-bottom: 5vh
-
-  @media screen and (max-width: 901px)
-    margin-bottom: 2vh
+  margin-bottom: 3vh
 
 .profile__content
   display: flex
@@ -175,7 +172,7 @@ export default {
 
 .head__icon
     height: 100%
-    width: 3.5vw
+    width: 40px
     margin-right: 1vw
 
 .head__text
@@ -188,9 +185,10 @@ export default {
 .input
   position: relative
   height: 100%
-  min-width: 17vw
-  max-width: 25vw
-  padding-left: 2vw
+  min-width: 120px
+  width: 19vw
+  max-width: 300px
+  padding-left: 18px
 
   font-style: normal
   font-weight: 300
@@ -201,6 +199,10 @@ export default {
   outline: none
 
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1)
+
+  @media screen and (max-width: 601px)
+    padding-left: 12px
+    width: 35vw
 
 .input-wrapper
   position: relative
@@ -222,7 +224,7 @@ export default {
     right: 0%
     top: 0%
     height: 100%
-    width: 3vw
+    width: 30px
     background: #fff
 
     & *
@@ -237,7 +239,7 @@ export default {
 
     left: 0%
     top: 0%
-    width: 0.4vw
+    width: 4px
     height: 100%
     z-index: 2
 
@@ -246,15 +248,12 @@ export default {
 .names
   display: flex
   flex-direction: row
-  width: 65%
-  justify-content: space-between
+
+  > div:first-child
+    margin-right: 20px
 
 .btns
   display: flex
-  justify-content: space-between
-  min-width: 30%
-  width: 42%
-  max-width: 60%
   margin-top: 3vh
 
 .btn
@@ -264,7 +263,7 @@ export default {
   line-height: 28px
 
   border-radius: 5px
-  padding: 1.3vh 3vw
+  padding: 8px 25px
 
   cursor: pointer
   color: #fff
@@ -274,6 +273,7 @@ export default {
 
 .create
   background-color: #00A3FF
+  margin-right: 50px
 
   &:hover
     background-color: lighten(#00A3FF, 5%)
@@ -281,9 +281,7 @@ export default {
   &:active
     background-color: darken(#00A3FF, 5%)
 
-
 .cancel
-  padding-left: 3.5vw
   display: flex
   justify-content: center
   align-items: center
@@ -296,8 +294,28 @@ export default {
     background-color: darken(#DA2929, 5%)
 
 .logout-icon
-  margin-left: 0.5vw
+  margin-left: 7px
   filter: invert(1)
-  width: 22px
-  height: 22px
+  width: 20px
+  height: 20px
+
+@media screen and (max-width: 901px)
+  .input
+    font-size: 1.1em
+    width: 30vw
+
+  .space
+    margin-bottom: 2vh
+
+  .head__icon
+    width: 30px
+
+  .create
+    margin-right: 25px
+
+  .names
+      margin-right: 10px
+
+  .input-wrapper::before
+      width: 3px
 </style>

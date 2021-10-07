@@ -31,7 +31,8 @@
   -ms-user-select: none
 
 .pageUnderline
-  width: 40%
+  width: 30vw
+  min-width: 170px
 
 // .page__content
 //   display: flex

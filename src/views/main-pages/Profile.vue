@@ -252,9 +252,15 @@ export default {
   > div:first-child
     margin-right: 20px
 
+  @media screen and (max-width: 401px)
+    flex-direction: column
+
 .btns
   display: flex
   margin-top: 3vh
+
+  @media screen and (max-width: 401px)
+    flex-direction: column
 
 .btn
   font-style: normal
@@ -299,7 +305,7 @@ export default {
   width: 20px
   height: 20px
 
-@media screen and (max-width: 901px)
+@media screen and (max-width: 901px) and (min-width: 401px)
   .input
     font-size: 1.1em
     width: 30vw
@@ -314,8 +320,24 @@ export default {
     margin-right: 25px
 
   .names
-      margin-right: 10px
+    margin-right: 10px
 
   .input-wrapper::before
-      width: 3px
+    width: 3px
+
+@media screen and (max-width: 400px)
+  .btn
+    width: 90vw
+
+  .create
+    margin-bottom: 20px
+
+  .create
+    margin-right: 0
+
+  .head__icon
+    width: 30px
+
+  .input
+    width: 85vw
 </style>

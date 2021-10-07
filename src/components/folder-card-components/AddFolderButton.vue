@@ -55,6 +55,10 @@ export default {
   justify-content: center
   align-items: center
 
+  user-select: none
+  -ms-user-select: none
+  -moz-user-select: -moz-none
+
   &:hover
     background: #00A3FF
     cursor: pointer

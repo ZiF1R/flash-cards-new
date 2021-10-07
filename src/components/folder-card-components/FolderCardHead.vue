@@ -159,8 +159,8 @@ export default {
   flex-direction: column
   align-items: center
 
-  height: 80%
-  width: 1.6vw
+  height: 17px
+  width: 17px
 
   cursor: pointer
   z-index: 5
@@ -171,8 +171,8 @@ export default {
 
 .folder__review
   float: left
-  height: 80%
-  width: 1.6vw
+  height: 15px
+  width: 15px
   cursor: pointer
 
 .settings-wrapper
@@ -215,9 +215,9 @@ export default {
 
 .edit__icon,
 .remove__icon
-  margin-right: 0.5vw
+  margin-right: 5px
   height: 75%
-  width: 1.1vw
+  width: 12px
 
 .remove__text
   color: #CE1010

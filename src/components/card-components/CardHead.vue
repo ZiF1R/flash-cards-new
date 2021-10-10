@@ -251,4 +251,7 @@ export default {
 
   background: #e9e9e9
   z-index: 20
+
+  @media screen and  (max-width: 901px)
+    left: 25%
 </style>

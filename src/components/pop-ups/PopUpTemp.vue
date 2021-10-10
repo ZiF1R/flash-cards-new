@@ -62,8 +62,9 @@ export default {
   flex-direction: column
   position: relative
 
-  padding: 5vh 2.5vw
-  width: calc( 32vw - 5vw )
+  padding: 40px 20px
+  width: calc( 32vw - 40px )
+  min-width: fit-content
   height: max-content
 
   background: #fff

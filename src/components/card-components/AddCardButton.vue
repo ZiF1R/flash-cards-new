@@ -66,6 +66,9 @@ export default {
 
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15)
 
+  @media screen and (max-width: 901px)
+    left: 45%
+
   &:hover
     background: #00A3FF
     cursor: pointer

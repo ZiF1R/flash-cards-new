@@ -41,7 +41,7 @@
         </div>
         <AddCardButton :locale="locale" @createCard="createCard($event)" />
       </div>
-      <span class="space">1</span>
+      <span class="space">not a bug, just a feature :)</span>
     </template>
   </routes-temp>
 </template>
@@ -167,8 +167,11 @@ export default {
 <style lang="sass" scoped>
 .head__icon
     height: 100%
-    width: 3.5vw
-    margin-right: 1vw
+    width: 40px
+    margin-right: 10px
+
+    @media screen and (max-width: 901px)
+      width: 30px
 
 .head__text
     margin-top: 1vh
@@ -231,27 +234,20 @@ export default {
     color: #00A3FF
 
 .page__content
+  display: flex
   flex-wrap: wrap
-  position: relative
-
-  columns: 3
-  column-gap: 1vw
-
-  height: max-content
-  width: 100%
-  margin-top: 5vh
-  margin-bottom: 15vh
+  justify-content: flex-start
+  margin: 5vh 0 15vh
 
 .card
   display: flex
-  position: relative
   flex-direction: column
-  break-inside: avoid
-  margin-bottom: 3vh
+  position: relative
 
   padding: 1.5vh 1.3vw
-  min-height: calc( 140px - 3vh )
-  height: max-content
+  margin-bottom: 25px
+  margin-right: 1.8vw
+  height: calc( 140px - 3vh )
   width: calc( 280px - 2.6vw )
 
   background: #fff

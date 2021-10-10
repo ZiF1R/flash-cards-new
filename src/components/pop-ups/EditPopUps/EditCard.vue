@@ -136,7 +136,7 @@ button
   line-height: 28px
 
   border-radius: 5px
-  padding: 1.3vh 4vw
+  padding: 10px 30px
 
   cursor: pointer
   color: #fff

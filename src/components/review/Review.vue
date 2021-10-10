@@ -21,11 +21,11 @@
         <img
           class="icon_active"
           :title="localize(`Show examples`)"
-          src="../assets/profile/eye.svg"
+          src="../../assets/profile/eye.svg"
         />
         <img
           :title="localize(`Hide examples`)"
-          src="../assets/profile/invisible.svg"
+          src="../../assets/profile/invisible.svg"
         />
       </div>
       <div class="examples" v-if="showExamples">
@@ -42,16 +42,6 @@
       />
 
       <div class="result" v-if="checkedAnswer">
-        <!-- <small
-          :class="{
-            notification_wrong: !rightAnswer,
-            notification_right: rightAnswer,
-          }"
-          class="notification"
-          v-if="timeLimit && timeIsOver"
-        >
-          {{ localize("Time is over") }}!
-        </small> -->
         <small class="notification notification_right" v-if="isRight">
           {{ localize("Right answer") }}!
         </small>

@@ -80,10 +80,7 @@ export default {
 
 <style lang="sass" scoped>
 .space
-  margin-bottom: 3vh
-
-  @media screen and (max-width: 901px)
-    margin-bottom: 2vh
+  margin-bottom: 2vh
 
 .head__icon
     height: 100%

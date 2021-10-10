@@ -67,7 +67,7 @@
 import localizeFilter from "@/locale/locale";
 import Confirm from "@/components/pop-ups/ConfirmPopUps/Confirm";
 import EditFolder from "@/components/pop-ups/EditPopUps/EditFolder";
-import Review from "@/components/Review";
+import Review from "@/components/review/Review.vue";
 
 export default {
   name: "FolderCardHead",

@@ -162,13 +162,14 @@ export default {
 
 <style lang="sass" scoped>
 .space
-  margin-bottom: 3vh
+  margin-bottom: 2vh
 
 .profile__content
   display: flex
   position: relative
   flex-direction: column
   margin-top: 5vh
+  margin-right: 20px
 
 .head__icon
     height: 100%
@@ -201,12 +202,12 @@ export default {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1)
 
   @media screen and (max-width: 601px)
-    padding-left: 12px
+    padding-left: 14px
     width: 35vw
 
 .input-wrapper
   position: relative
-  height: 5.5vh
+  height: 45px
   margin-bottom: 3vh
   width: fit-content
 
@@ -306,12 +307,13 @@ export default {
   height: 20px
 
 @media screen and (max-width: 901px) and (min-width: 401px)
+  .input-wrapper
+    height: 40px
+
   .input
     font-size: 1.1em
-    width: 30vw
-
-  .space
-    margin-bottom: 2vh
+    width: 35vw
+    max-width: 250px
 
   .head__icon
     width: 30px

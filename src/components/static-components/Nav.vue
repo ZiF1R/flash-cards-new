@@ -186,9 +186,9 @@ nav
   align-items: center
   justify-content: flex-start
 
-  padding-left: 20px
-  width: 100%
-  height: 7vh
+  padding-left: 30px
+  width: calc(100% - 10px)
+  height: 60px
   cursor: pointer
   margin-bottom: 0.5vh
 

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/flash-cards-new/precache-manifest.348976ff4b2e0a465a247170f659eb37.js"
+  "/flash-cards-new/precache-manifest.c73d944fb85872c65ade61c1751b935a.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "flash-cards-new"});

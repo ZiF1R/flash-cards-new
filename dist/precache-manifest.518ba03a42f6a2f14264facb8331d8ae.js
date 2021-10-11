@@ -4,24 +4,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flash-cards-new/brain.svg"
   },
   {
-    "revision": "425fd8ef80c3533b01e6",
-    "url": "/flash-cards-new/css/app.a92aaf81.css"
+    "revision": "e38db2ca03277173b378",
+    "url": "/flash-cards-new/css/app.a2585a6e.css"
   },
   {
-    "revision": "3eb781ac1f081c930a35",
-    "url": "/flash-cards-new/css/foldercontent.84953e25.css"
+    "revision": "27e0780fd2e28aadce69",
+    "url": "/flash-cards-new/css/foldercontent.eb29c146.css"
   },
   {
-    "revision": "f89d40016cb4a03efa0a",
-    "url": "/flash-cards-new/css/folders.2aaf48d2.css"
+    "revision": "c768275c18a142555d92",
+    "url": "/flash-cards-new/css/folders.c69575a3.css"
   },
   {
     "revision": "84f98f92abe24bbfb264",
     "url": "/flash-cards-new/css/login.5dfd4887.css"
   },
   {
-    "revision": "708e7dc197370a2c2b96",
-    "url": "/flash-cards-new/css/profile.befff178.css"
+    "revision": "5d14a7dce45843a8689b",
+    "url": "/flash-cards-new/css/profile.5714f2b5.css"
   },
   {
     "revision": "e32fb4d9de79fa54c898",
@@ -112,24 +112,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flash-cards-new/img/settings_folder.d9e03723.svg"
   },
   {
-    "revision": "8b477baa7658836d96e1476b0dac4428",
+    "revision": "db3b6e1b8c51f58d133ce55576e42e85",
     "url": "/flash-cards-new/index.html"
   },
   {
-    "revision": "425fd8ef80c3533b01e6",
-    "url": "/flash-cards-new/js/app.4dd9cf22.js"
+    "revision": "e38db2ca03277173b378",
+    "url": "/flash-cards-new/js/app.417223be.js"
   },
   {
     "revision": "d7924185ff9ab6cac739",
     "url": "/flash-cards-new/js/chunk-vendors.7650996d.js"
   },
   {
-    "revision": "3eb781ac1f081c930a35",
-    "url": "/flash-cards-new/js/foldercontent.4a87c5a5.js"
+    "revision": "27e0780fd2e28aadce69",
+    "url": "/flash-cards-new/js/foldercontent.6810ce88.js"
   },
   {
-    "revision": "f89d40016cb4a03efa0a",
-    "url": "/flash-cards-new/js/folders.ecf666b4.js"
+    "revision": "c768275c18a142555d92",
+    "url": "/flash-cards-new/js/folders.51792a05.js"
   },
   {
     "revision": "690de8e741af7dfa92fb",
@@ -140,8 +140,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flash-cards-new/js/login.2e989994.js"
   },
   {
-    "revision": "708e7dc197370a2c2b96",
-    "url": "/flash-cards-new/js/profile.5450fc6c.js"
+    "revision": "5d14a7dce45843a8689b",
+    "url": "/flash-cards-new/js/profile.98485eaa.js"
   },
   {
     "revision": "e32fb4d9de79fa54c898",

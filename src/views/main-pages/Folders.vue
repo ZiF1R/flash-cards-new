@@ -118,7 +118,7 @@ export default {
   position: relative
   display: flex
   flex-direction: column
-  padding: 1.5vh 1.3vw
+  padding: 10px 15px
   height: calc( 140px - 3vh )
   width: calc( 280px - 2.6vw )
 </style>

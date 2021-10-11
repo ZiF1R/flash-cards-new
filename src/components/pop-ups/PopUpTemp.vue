@@ -63,12 +63,17 @@ export default {
   position: relative
 
   padding: 40px 20px
+  max-width: 450px
   width: calc( 32vw - 40px )
-  min-width: fit-content
+  min-width: 270px
   height: max-content
 
   background: #fff
   box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1)
+
+  @media screen and (max-width: 401px)
+    width: 100%
+    min-width: 0
 
 .pop-up__close
   display: flex

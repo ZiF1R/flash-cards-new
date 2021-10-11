@@ -73,7 +73,7 @@ h1, h2, h3, h4, h5, h6
   padding: 0
 
 .routes
-  margin-left: 26vw
+  margin-left: 25vw
   width: 66vw
   min-height: 100vh
 

@@ -34,12 +34,6 @@
   width: 30vw
   min-width: 170px
 
-// .page__content
-//   display: flex
-//   position: relative
-//   flex-wrap: wrap
-//   justify-content: flex-start
-//   margin-top: 5vh
-
-//   flex-direction: column
+  @media screen and (max-width: 401px)
+    width: 95%
 </style>

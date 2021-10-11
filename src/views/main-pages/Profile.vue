@@ -256,6 +256,9 @@ export default {
   @media screen and (max-width: 401px)
     flex-direction: column
 
+    > div:first-child
+      margin-right: 0
+
 .btns
   display: flex
   margin-top: 3vh
@@ -328,6 +331,9 @@ export default {
     width: 3px
 
 @media screen and (max-width: 400px)
+  .profile__content, .names
+    align-items: center
+
   .btn
     width: 90vw
 

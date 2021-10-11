@@ -239,6 +239,9 @@ export default {
   justify-content: flex-start
   margin: 5vh 0 15vh
 
+  @media screen and (max-width: 401px)
+    justify-content: center
+
 .card
   display: flex
   flex-direction: column

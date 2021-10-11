@@ -238,9 +238,10 @@ export default {
   width: 1.1vw
 
 .pop-up
+  align-self: center
   position: fixed
 
-  padding: 2vh 3.5vw
+  padding: 15px 30px
   bottom: 5%
   left: 43%
 
@@ -254,4 +255,9 @@ export default {
 
   @media screen and  (max-width: 901px)
     left: 25%
+
+  @media screen and  (max-width: 501px)
+    left: 0
+    width: calc(100% - 60px)
+    text-align: center
 </style>

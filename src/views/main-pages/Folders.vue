@@ -119,6 +119,6 @@ export default {
   display: flex
   flex-direction: column
   padding: 10px 15px
-  height: calc( 140px - 3vh )
-  width: calc( 280px - 2.6vw )
+  height: calc( 140px - 20px )
+  width: calc( 280px - 30px )
 </style>

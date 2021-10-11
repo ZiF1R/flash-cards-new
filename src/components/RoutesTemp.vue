@@ -34,6 +34,9 @@
   width: 30vw
   min-width: 170px
 
-  @media screen and (max-width: 401px)
+  @media screen and (max-width: 901px)
+    width: 55vw
+
+  @media screen and (max-width: 501px)
     width: 95%
 </style>

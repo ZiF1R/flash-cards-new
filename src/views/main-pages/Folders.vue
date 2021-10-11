@@ -103,7 +103,7 @@ export default {
   justify-content: flex-start
   margin-top: 5vh
 
-  @media screen and (max-width: 401px)
+  @media screen and (max-width: 501px)
     justify-content: center
 
 .item

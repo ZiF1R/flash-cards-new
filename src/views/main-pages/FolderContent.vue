@@ -214,7 +214,7 @@ export default {
   padding-bottom: 1.5vh
 
   .filter
-    margin-right: 1.5vw
+    margin-right: 15px
     height: 100%
     cursor: pointer
 
@@ -223,7 +223,7 @@ export default {
     position: absolute
     content: ""
 
-    height: 0.5vh
+    height: 3.5px
     width: 0px
     bottom: -6%
     left: 0%
@@ -239,7 +239,7 @@ export default {
   justify-content: flex-start
   margin: 5vh 0 15vh
 
-  @media screen and (max-width: 401px)
+  @media screen and (max-width: 501px)
     justify-content: center
 
 .card

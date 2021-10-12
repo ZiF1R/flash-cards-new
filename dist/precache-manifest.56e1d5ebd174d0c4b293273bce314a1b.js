@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flash-cards-new/brain.svg"
   },
   {
-    "revision": "e38db2ca03277173b378",
+    "revision": "2ea43cfec44fac5e99c0",
     "url": "/flash-cards-new/css/app.a2585a6e.css"
   },
   {
@@ -16,16 +16,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flash-cards-new/css/folders.c69575a3.css"
   },
   {
-    "revision": "84f98f92abe24bbfb264",
-    "url": "/flash-cards-new/css/login.5dfd4887.css"
+    "revision": "e7c41ca163bf4601fd61",
+    "url": "/flash-cards-new/css/login.478a9f2e.css"
   },
   {
     "revision": "5d14a7dce45843a8689b",
     "url": "/flash-cards-new/css/profile.5714f2b5.css"
   },
   {
-    "revision": "e32fb4d9de79fa54c898",
-    "url": "/flash-cards-new/css/registration.5dfd4887.css"
+    "revision": "15803c1e8b3d57947d41",
+    "url": "/flash-cards-new/css/registration.478a9f2e.css"
   },
   {
     "revision": "ba7517595d44de36bca9379992f2cd22",
@@ -112,12 +112,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flash-cards-new/img/settings_folder.d9e03723.svg"
   },
   {
-    "revision": "db3b6e1b8c51f58d133ce55576e42e85",
+    "revision": "3533eaf32eafc6849e4125e1ccc6ec26",
     "url": "/flash-cards-new/index.html"
   },
   {
-    "revision": "e38db2ca03277173b378",
-    "url": "/flash-cards-new/js/app.417223be.js"
+    "revision": "2ea43cfec44fac5e99c0",
+    "url": "/flash-cards-new/js/app.fad62d94.js"
   },
   {
     "revision": "d7924185ff9ab6cac739",
@@ -136,16 +136,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flash-cards-new/js/help.51a9b4b5.js"
   },
   {
-    "revision": "84f98f92abe24bbfb264",
-    "url": "/flash-cards-new/js/login.2e989994.js"
+    "revision": "e7c41ca163bf4601fd61",
+    "url": "/flash-cards-new/js/login.bd0b69ab.js"
   },
   {
     "revision": "5d14a7dce45843a8689b",
     "url": "/flash-cards-new/js/profile.98485eaa.js"
   },
   {
-    "revision": "e32fb4d9de79fa54c898",
-    "url": "/flash-cards-new/js/registration.30806e5d.js"
+    "revision": "15803c1e8b3d57947d41",
+    "url": "/flash-cards-new/js/registration.330cca0b.js"
   },
   {
     "revision": "3ff32dc15798753b9f02",

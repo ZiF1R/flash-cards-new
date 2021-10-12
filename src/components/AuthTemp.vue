@@ -36,12 +36,17 @@
     display: flex
     flex-direction: column
 
-    padding: 4vh 3vw
-    width: calc( 35vw - 6vw )
-    min-height: calc( 47vh - 8vh )
+    padding: 35px 25px
+    width: calc( 35vw - 50px )
+    min-width: 350px
+    min-height: calc( 47vh - 70px )
 
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1)
     background: #fff
+
+    @media screen and (max-width: 501px)
+      width: calc( 100% - 50px )
+      min-width: 0
 
     .input
       font-style: normal
@@ -115,7 +120,7 @@
   line-height: 28px
 
   border-radius: 5px
-  padding: 1.3vh 4vw
+  padding: 10px 35px
 
   cursor: pointer
   color: #fff

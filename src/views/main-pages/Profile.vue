@@ -174,7 +174,7 @@ export default {
 .head__icon
     height: 100%
     width: 40px
-    margin-right: 1vw
+    margin-right: 10px
 
 .head__text
     margin-top: 1vh

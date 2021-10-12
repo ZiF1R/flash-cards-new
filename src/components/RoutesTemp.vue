@@ -8,8 +8,6 @@
     <slot name="space"></slot>
     <hr class="pageUnderline" />
     <slot name="page_content"></slot>
-    <!-- <div class="page__content">
-    </div> -->
   </div>
 </template>
 

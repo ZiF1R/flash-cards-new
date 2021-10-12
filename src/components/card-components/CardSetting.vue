@@ -61,15 +61,15 @@ export default {
     flex-direction: row
     text-align: left
     align-items: center
-    width: calc( 100% - 2vw )
+    width: calc( 100% - 16px )
     height: 3vh
-    padding: 0.2vh 1vw
+    padding: 1.5px 8px
 
     &:hover
       background: darken(#fff, 3%)
 
 .setting__icon
-  margin-right: 0.5vw
+  margin-right: 6px
   width: 15px
   height: 15px
 

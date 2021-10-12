@@ -210,9 +210,8 @@ export default {
   -ms-user-select: none
 
 .settings__icon
-  margin-right: 0.5vw
-  width: 17px
-  height: 17px
+  width: 16px
+  height: 16px
 
 .card__settings
   display: flex

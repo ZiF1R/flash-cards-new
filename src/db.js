@@ -6,6 +6,7 @@ import folders from './db-modules/folders';
 import categories from './db-modules/categories';
 import cards from './db-modules/cards';
 import review from './db-modules/review';
+import settings from './db-modules/settings';
 
 const getUid = async () => {
   const user = firebase.auth().currentUser;
@@ -20,4 +21,5 @@ export const _db = {
   ...categories,
   ...cards,
   ...review,
+  ...settings
 };

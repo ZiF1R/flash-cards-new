@@ -1,4 +1,4 @@
-# flash-cards-new
+# [flash-cards-new](https://zif1r.github.io/flash-cards-new/) (go to app)
 
 ## Project setup
 ```

@@ -1,13 +1,6 @@
 <template>
   <select class="list" @input="chooseOption($event.target)">
-    <option
-      :selected="
-        (/cards/i.test(settingTitle) && item === cardsLimit) ||
-        (/time/i.test(settingTitle) && item === timeLimit)
-      "
-      v-for="item of list"
-      :key="item"
-    >
+    <option :selected="item === active" v-for="item of list" :key="item">
       {{ item }}
     </option>
   </select>
@@ -16,24 +9,22 @@
 <script>
 export default {
   props: {
-    titleList: String,
-    currentTimeLimit: Number,
-    currentCardsLimit: Number,
+    active: Number,
     from: Number,
     to: Number,
     delta: Number,
   },
+
   data() {
     return {
-      settingTitle: this.titleList,
-      cardsLimit: this.currentCardsLimit,
-      timeLimit: this.currentTimeLimit,
       list: [],
     };
   },
+
   created() {
     for (let i = this.from; i < this.to + 1; i += this.delta) this.list.push(i);
   },
+
   methods: {
     chooseOption(e) {
       e.forEach((el) => el.selected && this.$emit("selectOption", +el.text));

@@ -1,7 +1,7 @@
 <template>
   <div
-    :class="{ 'switch-active': this.switchReview || this.switchTheme }"
     class="switch"
+    :class="{ 'switch-active': this.switched }"
     @click.left="switchBtn($event)"
   ></div>
 </template>
@@ -9,20 +9,13 @@
 <script>
 export default {
   props: {
-    titleList: String,
-    switchedReview: Boolean,
-    switchedTheme: Boolean,
+    switched: Boolean,
   },
-  data() {
-    return {
-      switchReview: /reversed/i.test(this.titleList) && this.switchedReview,
-      switchTheme: /theme/i.test(this.titleList) && this.switchedTheme,
-    };
-  },
+
   methods: {
     switchBtn(e) {
       e.target.classList.toggle("switch-active");
-      this.$emit("switchChanged");
+      this.$emit("switchChanged", { switchState: !this.switched });
     },
   },
 };

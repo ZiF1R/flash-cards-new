@@ -35,15 +35,12 @@
 import RoutesTemp from "@/components/RoutesTemp";
 import SettingBlock from "@/components/SettingBlock";
 import localizeFilter from "@/locale/locale";
+import { mapGetters } from "vuex";
 
 export default {
   name: "Settings",
 
   props: {
-    switchedTheme: Boolean,
-    switchedReview: Boolean,
-    timeLimit: Number,
-    cardsLimit: Number,
     locale: String,
   },
 
@@ -54,8 +51,6 @@ export default {
 
   data() {
     return {
-      localCardsLimit: this.cardsLimit,
-      localTimeLimit: this.timeLimit,
       activeAnchor: "General",
       anchors: ["General", "Review", "Other"],
       blocks: [
@@ -66,6 +61,8 @@ export default {
               title: "App theme",
               description: "Switch the theme of the app",
               buttonType: "Switch",
+              switched: this.isThemeSwitched(),
+              property: "switchTheme",
             },
           ],
         },
@@ -79,11 +76,15 @@ export default {
               from: 5,
               delta: 5,
               to: 100,
+              active: this.getCardsLimit(),
+              property: "cardsLimit",
             },
             {
               title: "Reversed review",
               description: "Show the card definition first in review",
               buttonType: "Switch",
+              switched: this.isReviewSwitched(),
+              property: "switched",
             },
             {
               title: "Time limit",
@@ -93,6 +94,8 @@ export default {
               from: 0,
               delta: 5,
               to: 120,
+              active: this.getTimeLimit(),
+              property: "timeLimit",
             },
           ],
         },
@@ -118,6 +121,12 @@ export default {
   },
 
   methods: {
+    ...mapGetters([
+      "getTimeLimit",
+      "getCardsLimit",
+      "isReviewSwitched",
+      "isThemeSwitched",
+    ]),
     anchorMarker() {
       const anchorLine = document.querySelector(".anchors-marker"),
         anchor = document.querySelectorAll(".anchor");

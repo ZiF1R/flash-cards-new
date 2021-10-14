@@ -20,21 +20,17 @@
       <div class="setting__action">
         <Button v-if="setting.buttonType === `Button`" />
         <List
-          :titleList="setting.title"
-          :currentTimeLimit="localTimeLimit"
-          :currentCardsLimit="localCardsLimit"
+          v-if="setting.buttonType === `List`"
+          :active="setting.active"
           :from="setting.from"
           :to="setting.to"
           :delta="setting.delta"
-          v-if="setting.buttonType === `List`"
-          @selectOption="selectOption($event, setting.title)"
+          @selectOption="selectOpt($event, setting.property)"
         />
         <Switch
-          :titleList="setting.title"
-          :switchedReview="switchedReview"
-          :switchedTheme="switchedTheme"
-          @switchChanged="switchChanged(setting.title)"
           v-if="setting.buttonType === `Switch`"
+          :switched="setting.switched"
+          @switchChanged="switchChanged($event, setting.property)"
         />
       </div>
     </div>
@@ -46,6 +42,7 @@ import Button from "@/components/buttons/Button";
 import List from "@/components/buttons/List";
 import Switch from "@/components/buttons/Switch";
 import localizeFilter from "@/locale/locale";
+import { mapActions } from "vuex";
 
 export default {
   name: "SettingBlock",
@@ -62,14 +59,23 @@ export default {
   },
 
   methods: {
+    ...mapActions(["selectOption", "changeSwitch"]),
     localize(frase) {
       return localizeFilter[this.locale][frase] || frase;
     },
-    selectOption(number, listTitle) {
-      this.$emit("select_Option", { number, listTitle });
+    selectOpt(selectedItem, property) {
+      this.selectOption({
+        selectedItem,
+        block: this.block.title.toLowerCase(),
+        property,
+      });
     },
-    switchChanged(settingTitle) {
-      this.$emit("switch_Changed", settingTitle);
+    switchChanged(switchState, property) {
+      this.changeSwitch({
+        switchState,
+        block: this.block.title.toLowerCase(),
+        property,
+      });
     },
   },
 };

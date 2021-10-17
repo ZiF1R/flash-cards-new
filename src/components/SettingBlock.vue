@@ -30,7 +30,7 @@
         <Switch
           v-if="setting.buttonType === `Switch`"
           :switched="setting.switched"
-          @switchChanged="switchChanged($event, setting.property)"
+          @switchChanged="switchChanged($event, setting)"
         />
       </div>
     </div>
@@ -70,11 +70,12 @@ export default {
         property,
       });
     },
-    switchChanged({ switchState }, property) {
+    switchChanged({ switchState }, setting) {
+      setting.switched = switchState;
       this.changeSwitch({
         switchState,
         block: this.block.title.toLowerCase(),
-        property,
+        property: setting.property,
       });
     },
   },

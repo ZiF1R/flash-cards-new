@@ -4,28 +4,32 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flash-cards-new/brain.svg"
   },
   {
-    "revision": "2ea43cfec44fac5e99c0",
+    "revision": "a0441ac8a45830e7b62d",
     "url": "/flash-cards-new/css/app.a2585a6e.css"
   },
   {
-    "revision": "27e0780fd2e28aadce69",
-    "url": "/flash-cards-new/css/foldercontent.eb29c146.css"
+    "revision": "9051f78480fad1a2571e",
+    "url": "/flash-cards-new/css/foldercontent.959f048d.css"
   },
   {
-    "revision": "c768275c18a142555d92",
-    "url": "/flash-cards-new/css/folders.c69575a3.css"
+    "revision": "45cd98201971a441e434",
+    "url": "/flash-cards-new/css/folders.5030b7c7.css"
   },
   {
     "revision": "e7c41ca163bf4601fd61",
     "url": "/flash-cards-new/css/login.478a9f2e.css"
   },
   {
-    "revision": "5d14a7dce45843a8689b",
-    "url": "/flash-cards-new/css/profile.5714f2b5.css"
+    "revision": "c17b4632a2910abd115e",
+    "url": "/flash-cards-new/css/profile.8d339c22.css"
   },
   {
     "revision": "15803c1e8b3d57947d41",
     "url": "/flash-cards-new/css/registration.478a9f2e.css"
+  },
+  {
+    "revision": "04c02a5f89a89b0421cc",
+    "url": "/flash-cards-new/css/settings.39762717.css"
   },
   {
     "revision": "ba7517595d44de36bca9379992f2cd22",
@@ -48,6 +52,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flash-cards-new/img/edit.f9bfde57.svg"
   },
   {
+    "revision": "77b21bd3a36a4de0a5f509a69a75bebb",
+    "url": "/flash-cards-new/img/export.77b21bd3.svg"
+  },
+  {
     "revision": "1b5abd49cab1d316dd9cf12e386134f0",
     "url": "/flash-cards-new/img/eye.1b5abd49.svg"
   },
@@ -66,6 +74,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "ba01ee5de623fa987260fc2903179bf6",
     "url": "/flash-cards-new/img/left-arrow.ba01ee5d.svg"
+  },
+  {
+    "revision": "aabd5f0b6076ab2b397479f030e60839",
+    "url": "/flash-cards-new/img/link.aabd5f0b.svg"
   },
   {
     "revision": "d508160b343e7639c197e4d59b3112d3",
@@ -108,28 +120,32 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flash-cards-new/img/settings.75834395.svg"
   },
   {
+    "revision": "4896ecea4b0b80c9a475354156040e0b",
+    "url": "/flash-cards-new/img/settingsIcon.4896ecea.svg"
+  },
+  {
     "revision": "d9e03723208c733a82f702bdad031988",
     "url": "/flash-cards-new/img/settings_folder.d9e03723.svg"
   },
   {
-    "revision": "3533eaf32eafc6849e4125e1ccc6ec26",
+    "revision": "4666b32447099f9e6a552ffb6aa6ba50",
     "url": "/flash-cards-new/index.html"
   },
   {
-    "revision": "2ea43cfec44fac5e99c0",
-    "url": "/flash-cards-new/js/app.fad62d94.js"
+    "revision": "a0441ac8a45830e7b62d",
+    "url": "/flash-cards-new/js/app.6bf8ce28.js"
   },
   {
     "revision": "d7924185ff9ab6cac739",
     "url": "/flash-cards-new/js/chunk-vendors.7650996d.js"
   },
   {
-    "revision": "27e0780fd2e28aadce69",
-    "url": "/flash-cards-new/js/foldercontent.6810ce88.js"
+    "revision": "9051f78480fad1a2571e",
+    "url": "/flash-cards-new/js/foldercontent.55575df7.js"
   },
   {
-    "revision": "c768275c18a142555d92",
-    "url": "/flash-cards-new/js/folders.51792a05.js"
+    "revision": "45cd98201971a441e434",
+    "url": "/flash-cards-new/js/folders.681aeba7.js"
   },
   {
     "revision": "690de8e741af7dfa92fb",
@@ -140,16 +156,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flash-cards-new/js/login.bd0b69ab.js"
   },
   {
-    "revision": "5d14a7dce45843a8689b",
-    "url": "/flash-cards-new/js/profile.98485eaa.js"
+    "revision": "c17b4632a2910abd115e",
+    "url": "/flash-cards-new/js/profile.dd6dcf3a.js"
   },
   {
     "revision": "15803c1e8b3d57947d41",
     "url": "/flash-cards-new/js/registration.330cca0b.js"
   },
   {
-    "revision": "3ff32dc15798753b9f02",
-    "url": "/flash-cards-new/js/settings.a7dd476b.js"
+    "revision": "04c02a5f89a89b0421cc",
+    "url": "/flash-cards-new/js/settings.bad958fc.js"
   },
   {
     "revision": "2656bc1b41460cffa6ded4078c2f4b24",

@@ -9,10 +9,20 @@
         {{ reviewInit.currentIndex + 1 }} {{ localize("of") }}
         {{ reviewInit.to + 1 }} {{ localize("cards") }}
       </span>
-      <span class="review-data">{{ reviewInit.currentCard.term }}</span>
-      <span class="answer" v-if="showAnswer">{{
-        reviewInit.currentCard.definition
-      }}</span>
+
+      <div v-if="isReviewSwitched()">
+        <span class="review-data">{{ reviewInit.currentCard.definition }}</span>
+        <span class="answer" v-if="showAnswer">{{
+          reviewInit.currentCard.term
+        }}</span>
+      </div>
+      <div v-else>
+        <span class="review-data">{{ reviewInit.currentCard.term }}</span>
+        <span class="answer" v-if="showAnswer">{{
+          reviewInit.currentCard.definition
+        }}</span>
+      </div>
+
       <div
         class="showExamplesIcon"
         @click.left="changeExamplesVisibility"
@@ -114,6 +124,7 @@ import localizeFilter from "@/locale/locale";
 import PopUpTemp from "@/components/pop-ups/PopUpTemp";
 import Confirm from "@/components/pop-ups/ConfirmPopUps/Confirm";
 import ReviewTotal from "@/components/review/ReviewTotal";
+import { mapGetters } from "vuex";
 import { _review } from "@/components/review/review.js";
 import { _db } from "@/db.js";
 
@@ -159,6 +170,12 @@ export default {
       sizeOfDeck: null,
       seconds: 0,
       timer: setInterval(() => this.seconds++, 1000),
+      timeLimit: {
+        limit: this.getTimeLimit(),
+        timePassed: 0,
+        timeToAnswer: this.limit && setInterval(() => this.timePassed++, 1000),
+        isTimeOver: this.limit && this.limit <= this.timePassed,
+      },
       reviewInit: {
         from: 0,
         to: 1,
@@ -186,12 +203,14 @@ export default {
   },
 
   methods: {
+    ...mapGetters(["isReviewSwitched", "getCardsLimit", "getTimeLimit"]),
     localize(frase) {
       return localizeFilter[this.locale][frase] || frase;
     },
     startReviewInit() {
+      // default values
       this.reviewInit.deck = [...this.folder.cards];
-      this.sizeOfDeck = this.reviewInit.deck.length;
+      this.sizeOfDeck = this.getCardsLimit() || this.reviewInit.deck.length;
 
       this.reviewInit.deck = _review.createDeck(
         this.reviewInit.deck,
@@ -267,6 +286,14 @@ export default {
       return this.folder.cards.filter(
         (card) => card === this.reviewInit.currentCard
       )[0];
+    },
+  },
+  
+  watch: {
+    timeLimit: function (time) {
+      console.log(time)
+      // this.timeIsOver = this.timeLimit && this.timeLimit <= time;
+      // this.timeIsOver && (clearInterval(this.timeToAnswer), this.checkAnswer());
     },
   },
 };

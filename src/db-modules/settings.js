@@ -14,7 +14,7 @@ const changeSettings = async (newSettings) => {
 };
 
 const getSettings = async () => {
-  // let settings = {};
+  let settings = {};
   const uid = await getUid();
   await firebase
     .database()
@@ -22,12 +22,14 @@ const getSettings = async () => {
     .once("value")
     .then((snapShot) => {
       try {
-        console.log(snapShot);
+        if (snapShot.toJSON()) {
+          settings = snapShot.toJSON();
+        }
       } catch (error) {
         console.log(error);
       }
     });
-  // return [...categories.map((el) => el.name)];
+  return settings;
 };
 
 export default {

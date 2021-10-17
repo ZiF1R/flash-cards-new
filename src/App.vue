@@ -37,11 +37,17 @@ export default {
   },
 
   methods: {
-    ...mapActions(["fetchUser", "fetchFolders", "fetchCategories"]),
+    ...mapActions([
+      "fetchUser",
+      "fetchFolders",
+      "fetchCategories",
+      "fetchSettings",
+    ]),
     async loadData() {
       await this.fetchUser();
       await this.fetchFolders();
       await this.fetchCategories();
+      await this.fetchSettings();
     },
     changeLang(lang) {
       this.locale = lang;

@@ -70,7 +70,7 @@ export default {
         property,
       });
     },
-    switchChanged(switchState, property) {
+    switchChanged({ switchState }, property) {
       this.changeSwitch({
         switchState,
         block: this.block.title.toLowerCase(),

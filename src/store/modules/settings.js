@@ -13,9 +13,9 @@ export default {
       await _db.changeSettings({ general: state.general, review: state.review });
     },
 
-    async fetchSettings({ commit, state }) {
-      let { general, review } = await _db.getSettings();
-      commit("getSettings", { general, review });
+    async fetchSettings({ commit }) {
+      let settings = await _db.getSettings();
+      commit("setSettings", settings);
     },
   },
   mutations: {
@@ -23,7 +23,7 @@ export default {
       state[block][property] = value;
     },
 
-    getSettings(state, { general, review }) {
+    setSettings(state, { general, review }) {
       state.general = general;
       state.review = review;
     },
@@ -53,37 +53,3 @@ export default {
     },
   },
 };
-
-// switch_Changed(settingTitle) {
-//   if (/Reversed/i.test(settingTitle)) {
-//     this.settings.review.switched = !this.settings.review.switched;
-//     const uid = await this.getUid();
-//     await firebase
-//       .database()
-//       .ref(`/users/${uid}/settings`)
-//       .set({ ...this.settings });
-//     await this.getSettings();
-//   }
-//   if (/theme/i.test(settingTitle)) {
-//     this.settings.general.switchTheme = !this.settings.general.switchTheme;
-//     const uid = await this.getUid();
-//     await firebase
-//       .database()
-//       .ref(`/users/${uid}/settings`)
-//       .set({ ...this.settings });
-//     await this.getSettings();
-//   }
-// }
-// select_Option(choosedOptionData) {
-//   let regExpr = /time/i
-//   if (regExpr.test(choosedOptionData.listTitle))
-//     this.settings.review.timeLimit = choosedOptionData.number
-//   else
-//     this.settings.review.cardsLimit = choosedOptionData.number
-//   const uid = await this.getUid();
-//   await firebase
-//     .database()
-//     .ref(`/users/${uid}/settings`)
-//     .set({ ...this.settings });
-//   await this.getSettings();
-// }

@@ -9,7 +9,6 @@
         class="input"
         :placeholder="localize(input.content)"
         :title="localize(input.content)"
-        maxlength="30"
         v-model.trim="editData[input.model]"
       />
     </template>

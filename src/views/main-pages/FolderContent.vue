@@ -250,7 +250,7 @@ export default {
   margin-bottom: 25px
   margin-right: 1.8vw
   padding: 10px 15px
-  height: calc( 140px - 20px )
+  min-height: calc( 140px - 20px )
   width: calc( 280px - 30px )
 
   background: #fff

@@ -79,15 +79,21 @@ h1, h2, h3, h4, h5, h6
   padding: 0
 
 .routes
+  top: 0
+  position: absolute
   margin-left: 26vw
   width: 66vw
   min-height: 100vh
 
   @media screen and (max-width: 901px) and (min-width: 601px)
+    padding-top: 30px
+    min-height: calc(100vh - 30px)
     margin-left: 40px
     width: calc(90vw - 20px)
 
   @media screen and (max-width: 601px)
+    padding-top: 30px
+    min-height: calc(100vh - 30px)
     margin-left: 20px
     width: calc(100vw - 20px)
 

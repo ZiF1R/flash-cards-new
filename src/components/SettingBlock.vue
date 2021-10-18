@@ -82,7 +82,7 @@ export default {
 };
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 .block__settings
     display: flex
     flex-direction: column

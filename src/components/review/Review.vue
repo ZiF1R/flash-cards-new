@@ -104,7 +104,7 @@
     v-if="showConfirm"
     :locale="locale"
     @close="showConfirm = false"
-    @confirmed="$emit('close')"
+    @confirmed="closeReview()"
   >
     <template v-slot:confirm__message>
       {{
@@ -173,8 +173,8 @@ export default {
       timeLimit: {
         limit: this.getTimeLimit(),
         timePassed: 0,
-        timeToAnswer: this.limit && setInterval(() => this.timePassed++, 1000),
-        isTimeOver: this.limit && this.limit <= this.timePassed,
+        interval: null,
+        isTimeOver: false,
       },
       reviewInit: {
         from: 0,
@@ -207,6 +207,18 @@ export default {
     localize(frase) {
       return localizeFilter[this.locale][frase] || frase;
     },
+    closeReview() {
+      clearInterval(this.timeLimit.interval);
+      this.$emit("close");
+    },
+    timeToAnswer() {
+      this.timeLimit.timePassed++;
+      this.timeLimit.isTimeOver =
+        this.timeLimit.limit <= this.timeLimit.timePassed;
+
+      this.timeLimit.isTimeOver &&
+        (clearInterval(this.timeLimit.interval), this.checkAnswer());
+    },
     startReviewInit() {
       // default values
       this.reviewInit.deck = [...this.folder.cards];
@@ -222,6 +234,10 @@ export default {
       ];
       this.generator = this.reviewInit[Symbol.iterator]();
       this.generator.next();
+
+      // init time to answer
+      this.timeLimit.interval =
+        this.timeLimit.limit && setInterval(this.timeToAnswer, 1000);
     },
     changeExamplesVisibility() {
       const imgs = document.querySelector(".showExamplesIcon").childNodes;
@@ -232,10 +248,16 @@ export default {
     },
     async checkAnswer() {
       this.showAnswer = true;
-      let isRight = _review.check(
-        this.answer,
-        this.reviewInit.currentCard.definition
-      );
+      clearInterval(this.timeLimit.interval);
+
+      let isRight;
+      if (!this.isReviewSwitched()) {
+        isRight = _review.check(
+          this.answer,
+          this.reviewInit.currentCard.definition
+        );
+      } else
+        isRight = _review.check(this.answer, this.reviewInit.currentCard.term);
 
       await this.markAnswer(isRight);
       this.checkedAnswer = true;
@@ -265,12 +287,13 @@ export default {
 
       if (this.generator.next().done) {
         this.reviewInit.isFinished = true;
-        clearInterval(this.reviewInit.timer);
-        // clearInterval(this.timeToAnswer)
-      }
-      // this.timePassed = 1;
-      // this.timeToAnswer = this.timeLimit && setInterval(() => this.timePassed++, 1000);
-      // this.timeIsOver = false;
+        clearInterval(this.timer);
+        clearInterval(this.timeLimit.interval);
+      } else
+        this.timeLimit.interval = this.timeLimit.limit && setInterval(this.timeToAnswer, 1000);
+
+      this.timeLimit.timePassed = 0;
+      this.timeLimit.isTimeOver = false;
     },
     async setAsCorrect() {
       let currentCard = this.getCurrentCard;
@@ -286,14 +309,6 @@ export default {
       return this.folder.cards.filter(
         (card) => card === this.reviewInit.currentCard
       )[0];
-    },
-  },
-  
-  watch: {
-    timeLimit: function (time) {
-      console.log(time)
-      // this.timeIsOver = this.timeLimit && this.timeLimit <= time;
-      // this.timeIsOver && (clearInterval(this.timeToAnswer), this.checkAnswer());
     },
   },
 };

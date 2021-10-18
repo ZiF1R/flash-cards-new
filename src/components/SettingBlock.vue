@@ -115,9 +115,18 @@ export default {
     flex-direction: row
     margin-bottom: 2vh
 
+    @media screen and (max-width: 601px)
+      justify-content: space-between
+
 .setting__text
     width: 25vw
     font-style: normal
+
+    @media screen and (max-width: 901px)
+      width: 43vw
+
+    @media screen and (max-width: 601px)
+      width: fit-content
 
 .setting__title
     font-size: 1.0625em
@@ -131,7 +140,7 @@ export default {
     color: rgba(0, 0, 0, 0.6)
 
 .setting__action
-    margin-left: 3vw
+    margin-left: 30px
     display: flex
     justify-content: center
     align-items: center

@@ -46,7 +46,7 @@ export default {
     font-size: 14px
     line-height: 20px
     padding: 6px 6px
-    width: 5vw
+    width: 65px
     border-radius: 5px
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1)
 </style>

@@ -193,7 +193,7 @@ export default {
   padding-bottom: 1.5vh
 
   .anchor
-    margin-right: 2vw
+    margin-right: 15px
     height: 100%
     cursor: pointer
 
@@ -215,8 +215,12 @@ export default {
   margin-left: 30px
   margin-top: 5vh
 
+  @media screen and (max-width: 501px)
+    margin-left: 0px
+
   .block
       display: flex
       flex-direction: column
       margin-bottom: 3vh
+      margin-right: 20px
 </style>

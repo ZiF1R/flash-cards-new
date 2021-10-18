@@ -201,14 +201,17 @@ export default {
   -webkit-user-select: none
   -ms-user-select: none
 
+  @media screen and (max-width: 501px)
+    right: 0
+
   .setting
     display: flex
     flex-direction: row
     text-align: left
     align-items: center
-    width: calc( 100% - 2vw )
+    width: calc( 100% - 14px )
     height: 3vh
-    padding: 0.2vh 1vw
+    padding: 1px 7px
 
     &:hover
       background: darken(#fff, 3%)

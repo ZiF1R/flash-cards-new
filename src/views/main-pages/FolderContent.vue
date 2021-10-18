@@ -247,11 +247,11 @@ export default {
   flex-direction: column
   position: relative
 
-  padding: 1.5vh 1.3vw
   margin-bottom: 25px
   margin-right: 1.8vw
-  height: calc( 140px - 3vh )
-  width: calc( 280px - 2.6vw )
+  padding: 10px 15px
+  height: calc( 140px - 20px )
+  width: calc( 280px - 30px )
 
   background: #fff
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1)

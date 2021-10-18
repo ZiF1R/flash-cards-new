@@ -196,7 +196,7 @@ export default {
 
   border-radius: 5px
   margin-top: 3vh
-  padding: 1vh 0vw
+  padding: 8px 0vw
 
   font-style: normal
   font-weight: normal
@@ -208,6 +208,9 @@ export default {
   -moz-user-select: -moz-none
   -webkit-user-select: none
   -ms-user-select: none
+
+  @media screen and (max-width: 501px)
+    right: 0
 
 .settings__icon
   width: 16px

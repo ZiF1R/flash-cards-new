@@ -160,6 +160,43 @@ export default {
       return localizeFilter[this.locale][frase] || frase;
     },
   },
+
+  computed: {
+    theme() {
+      return this.isThemeSwitched();
+    },
+  },
+
+  watch: {
+    theme: {
+      handler(newVal) {
+        let themeName;
+
+        // if theme is switched
+        if (newVal) themeName = "dark";
+        else themeName = "light";
+
+        let rootStyles = document.querySelector(":root");
+        let variables = [
+          "body-background",
+          "card-background",
+          "text-color",
+          "text-color-opacity",
+          "option-hover-background",
+          "nav-background",
+          "nav-icon-background",
+          "nav-icon-color",
+        ];
+
+        variables.forEach((variable) => {
+          rootStyles.style.setProperty(
+            `--${variable}-default`,
+            `var(--${variable}-${themeName})`
+          );
+        });
+      },
+    },
+  },
 };
 </script>
 

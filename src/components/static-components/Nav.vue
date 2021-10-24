@@ -91,6 +91,7 @@ export default {
     else this.links[0].active = true;
 
     this.activeLink = this.links.filter((el) => el.active)[0];
+    this.$router.push(`/${this.activeLink.path}`);
   },
 
   methods: {

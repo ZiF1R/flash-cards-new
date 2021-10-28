@@ -242,11 +242,11 @@ export default {
     width: 0px
     bottom: -5%
     left: 0%
-    background: #00A3FF
+    background: var(#{--primary-color})
     transition: left 0.3s ease-in-out, width 0.3s ease-in-out
 
   .anchor_active
-    color: #00A3FF
+    color: var(#{--primary-color})
 
 .settings__content
   margin-left: 30px

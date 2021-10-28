@@ -115,7 +115,7 @@ export default {
 </script>
 
 <style lang="sass">
-$blue: #00A3FF
+@import "@/sass/variables"
 
 nav
   display: flex
@@ -130,7 +130,7 @@ nav
   padding: 30px 20px
   padding-left: 0
   box-shadow: -3px 0 15px rgba(0, 0, 0, 0.2)
-  background: #fff
+  background: var(#{--nav-background-default})
 
 .overlay
   display: block
@@ -154,7 +154,7 @@ nav
   width: 0.5vw
   top: 0%
   left: 0%
-  background: $blue
+  background: var(#{--primary-color})
   transition: top 0.21s ease-in-out, height 0.3s ease-in-out
 
 .nav__logo
@@ -217,7 +217,7 @@ nav
   justify-content: center
   align-items: center
 
-  background: #f1f1f1
+  background: var(#{--nav-icon-background-default})
   border-radius: 50%
 
   margin-right: 10px
@@ -242,20 +242,19 @@ nav
       height: 19px
 
 a
-  color: #000
   text-decoration: none
 
 .link_active
   position: relative
   .link__img
-    background: $blue
+    background: var(#{--primary-color})
 
     .img
       filter: invert(1)
 
   .link__text
     font-weight: 400
-    color: $blue
+    color: var(#{--primary-color})
 
     &::before
       display: block
@@ -265,7 +264,7 @@ a
       height: 100%
       width: 6px
       left: 0%
-      background: $blue
+      background: var(#{--primary-color})
 
       @media screen and (max-width: 501px)
         width: 5px
@@ -289,7 +288,7 @@ a
 
   .footer__help-btn
     position: relative
-    background: $blue
+    background: var(#{--primary-color})
     width: calc( 100% - 40px )
     align-self: center
 
@@ -309,14 +308,14 @@ a
       padding: 1.5vh 2vw
 
     &:hover
-      background: lighten($blue, 6%)
+      background: lighten($primary-color, 6%)
 
     &:active
-      background-color: darken($blue, 5%)
+      background-color: darken($primary-color, 5%)
 
   .footer__copyright,
   .footer__copyright *
-    color: rgba(0, 0, 0, 0.6)
+    color: var(#{--text-color-opacity-default})
 
   .footer__copyright
     margin-top: 2.5vh

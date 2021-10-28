@@ -112,7 +112,7 @@ export default {
     grid-template-columns: max-content 1fr max-content
 
   .dots
-    border-bottom: 1px dotted #000
+    border-bottom: 1px dotted var(#{--text-color-default})
 
 .total__fields > div > div
   &:first-child
@@ -134,13 +134,13 @@ export default {
     padding: 1vh 3.5vw
 
     cursor: pointer
-    color: #fff
+    color: var(#{--text-color-default})
     background: none
     border: none
     outline: none
 
   .neutral
-    background-color: #00A3FF
+    background-color: var(#{--primary-color})
 
     &:hover
       background-color: lighten(#00A3FF, 5%)

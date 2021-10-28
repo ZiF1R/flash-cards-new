@@ -84,7 +84,7 @@ export default {
     display: block
     height: 100%
     width: 0.09vw
-    background: #000
+    background: var(#{--text-color-default})
     content: ""
     top: 0%
     right: 0%
@@ -96,8 +96,8 @@ export default {
   height: 15px
   top: -1%
 
-  background: #f8f8f8
-  border: 1.5px solid #000
+  background: var(#{--body-background-default})
+  border: 2px solid var(#{--text-color-default})
   border-radius: 50%
   pointer-events: none
 </style>

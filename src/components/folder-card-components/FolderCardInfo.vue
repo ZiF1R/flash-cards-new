@@ -108,5 +108,5 @@ export default {
   font-weight: 300
   font-size: 0.75em
   line-height: 16px
-  color: rgba(0, 0, 0, 0.5)
+  color: var(#{--text-color-opacity-default})
 </style>

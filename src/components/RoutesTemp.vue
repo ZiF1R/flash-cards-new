@@ -31,6 +31,9 @@
 .pageUnderline
   width: 30vw
   min-width: 170px
+  background: var(#{--text-color-opacity-default})
+  height: 0.5px
+  border: none
 
   @media screen and (max-width: 901px)
     width: 55vw

@@ -35,7 +35,8 @@ export default {
 
 <style lang="sass">
 .list
-    background: #fff
+    background: var(#{--card-background-default})
+    color: var(#{--text-color-default})
     border: none
     outline: none
     font: inherit

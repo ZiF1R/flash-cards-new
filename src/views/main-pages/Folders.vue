@@ -111,7 +111,7 @@ export default {
   margin-right: 1.8vw
   height: 140px
   width: 280px
-  background: #fff
+  background: var(#{--card-background-default})
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1)
 
 .folder

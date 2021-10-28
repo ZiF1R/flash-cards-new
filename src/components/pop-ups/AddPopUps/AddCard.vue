@@ -108,10 +108,11 @@ export default {
 
     border: none
     outline: none
+    background: unset
 
     margin-bottom: 3vh
     width: 100%
-    border-bottom: 1px solid #000
+    border-bottom: 1px solid var(#{--text-color-default})
 
 .button
     font-style: normal
@@ -129,7 +130,7 @@ export default {
     outline: none
 
 .create
-    background-color: #00A3FF
+    background-color: var(#{--primary-color})
 
     &:hover
       background-color: lighten(#00A3FF, 5%)
@@ -138,7 +139,7 @@ export default {
       background-color: darken(#00A3FF, 5%)
 
 .cancel
-    background-color: #DA2929
+    background-color: var(#{--danger-color})
 
     &:hover
       background-color: lighten(#DA2929, 5%)

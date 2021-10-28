@@ -112,10 +112,12 @@ export default {
 
     border: none
     outline: none
+    color: var(#{--text-color-default})
+    background: unset
 
     margin-bottom: 0vh
     width: 100%
-    border-bottom: 1px solid #000
+    border-bottom: 1px solid var(#{--text-color-default})
 
 .label-categories
     display: flex
@@ -125,9 +127,10 @@ export default {
     font-size: 1.1875em
     line-height: 28px
     margin-top: 3vh
+    color: var(#{--text-color-opacity-default})
 
     width: 100%
-    border-bottom: 1px solid #000
+    border-bottom: 1px solid var(#{--text-color-default})
 
 #categories
     flex: 1 0 auto
@@ -136,10 +139,10 @@ export default {
     font-size: 1em
     line-height: 28px
 
-    color: rgba(0, 0, 0, 0.7)
+    color: var(#{--text-color-default})
     border: none
     outline: none
-    background: inherit
+    background: var(#{--card-background-default})
 
 .add-category
     font-style: normal
@@ -151,16 +154,11 @@ export default {
     cursor: pointer
     margin-top: 3vh
     width: 100%
+    color: var(#{--text-color-opacity-default})
 
-    background: #F1F1F1
+    background: var(#{--option-hover-background-default})
     border: none
     outline: none
-
-    &:hover
-      background: darken(#F1F1F1, 2%)
-
-    &:active
-      background-color: darken(#F1F1F1, 4%)
 
 .button
     font-style: normal
@@ -178,7 +176,7 @@ export default {
     outline: none
 
 .create
-    background-color: #00A3FF
+    background-color: var(#{--primary-color})
 
     &:hover
       background-color: lighten(#00A3FF, 5%)
@@ -187,7 +185,7 @@ export default {
       background-color: darken(#00A3FF, 5%)
 
 .cancel
-    background-color: #DA2929
+    background-color: var(#{--danger-color})
 
     &:hover
       background-color: lighten(#DA2929, 5%)

@@ -29,7 +29,7 @@
   width: 100%!important
   height: 100vh
 
-  background: #f6f6f6
+  background: var(#{--body-background-default})
   z-index: 20
 
   form
@@ -42,7 +42,7 @@
     min-height: calc( 47vh - 70px )
 
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1)
-    background: #fff
+    background: var(#{--card-background-default})
 
     @media screen and (max-width: 501px)
       width: calc( 100% - 50px )
@@ -56,10 +56,12 @@
 
       border: none
       outline: none
+      background: unset
+      color: var(#{--text-color-default})
 
       margin-bottom: 0vh
       width: 100%
-      border-bottom: 1px solid #000
+      border-bottom: 1px solid var(#{--text-color-opacity-default})
 
 .auth-text
   font-style: normal
@@ -127,7 +129,7 @@
   background: none
   border: none
   outline: none
-  background-color: #00A3FF
+  background-color: var(#{--primary-color})
 
   &:hover
     background: lighten(#00A3FF, 6%)
@@ -153,5 +155,5 @@
   font-size: 0.875em
   line-height: 24px
   margin-top: 2vh
-  color: #DA2929
+  color: var(#{--danger-color})
 </style>

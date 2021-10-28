@@ -41,12 +41,14 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import "@/sass/variables"
+
 .item
   margin-bottom: 25px
   margin-right: 1.8vw
   height: 140px
   width: 280px
-  background: #fff
+  background: var(#{--card-background-default})
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1)
 
 .add-new
@@ -64,7 +66,7 @@ export default {
     cursor: pointer
 
   &:active
-    background-color: darken(#00A3FF, 5%)
+    background-color: darken($primary-color, 5%)
 
   &:hover .add-new__text
     color: #fff

@@ -60,6 +60,7 @@ export default {
   margin-top: 1.5vh
   width: 100%
   padding-bottom: 3vh
+  color: var(#{--text-color-default})
 
 .card__term
   font-style: normal
@@ -95,5 +96,5 @@ export default {
   font-weight: 300
   font-size: 0.75em
   line-height: 16px
-  color: rgba(0, 0, 0, 0.5)
+  color: var(#{--text-color-opacity-default})
 </style>

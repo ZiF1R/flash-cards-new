@@ -66,7 +66,7 @@ export default {
     padding: 1.5px 8px
 
     &:hover
-      background: darken(#fff, 3%)
+      background: var(#{--option-hover-background-default})
 
 .setting__icon
   margin-right: 6px
@@ -74,5 +74,5 @@ export default {
   height: 15px
 
 .remove__text
-  color: #CE1010
+  color: var(#{--danger-color})
 </style>

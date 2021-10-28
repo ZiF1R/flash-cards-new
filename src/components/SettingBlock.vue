@@ -96,7 +96,7 @@ export default {
     font-size: 1.0625em
     line-height: 24px
     margin-bottom: 2vh
-    color: #00A3FF
+    color: var(#{--primary-color})
     cursor: pointer
 
     &:hover .block__link
@@ -137,7 +137,7 @@ export default {
     line-height: 20px
     font-weight: 300
     font-size: 0.9375em
-    color: rgba(0, 0, 0, 0.6)
+    color: var(#{--text-color-opacity-default})
 
 .setting__action
     margin-left: 30px

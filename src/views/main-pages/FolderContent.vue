@@ -227,11 +227,11 @@ export default {
     width: 0px
     bottom: -6%
     left: 0%
-    background: #00A3FF
+    background: var(#{--primary-color})
     transition: left 0.3s ease-in-out, width 0.3s ease-in-out
 
   .filter_active
-    color: #00A3FF
+    color: var(#{--primary-color})
 
 .page__content
   display: flex
@@ -253,7 +253,7 @@ export default {
   min-height: calc( 140px - 20px )
   width: calc( 280px - 30px )
 
-  background: #fff
+  background: var(#{--card-background-default})
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1)
 
 .space

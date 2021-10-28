@@ -96,7 +96,7 @@ export default {
   height: auto
   top: 100%
 
-  background: #fff
+  background: var(#{--card-background-default})
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1)
 
   border-radius: 5px
@@ -123,8 +123,8 @@ export default {
     padding: 0.2vh 0
 
     &:hover
-      background: darken(#fff, 3%)
+      background: var(#{--option-hover-background-default})
 
   .item_active
-    background: darken(#fff, 3%)
+    background: var(#{--option-hover-background-default})
 </style>

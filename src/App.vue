@@ -59,6 +59,7 @@ export default {
 
 <style lang="sass">
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300&display=swap')
+@import "@/sass/variables"
 
 ::-webkit-scrollbar
   width: 0%
@@ -71,12 +72,16 @@ export default {
 body
   position: relative
   height: 100vh
-  background-color: #F8F8F8
+  background-color: var(#{--body-background-default})
+  color: var(#{--text-color-default})
   font-size: 16px
 
 h1, h2, h3, h4, h5, h6
   margin: 0
   padding: 0
+
+a
+  color: var(#{--text-color-default})
 
 .routes
   top: 0

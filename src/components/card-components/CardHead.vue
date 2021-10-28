@@ -191,7 +191,7 @@ export default {
   min-width: 7vw
   height: auto
 
-  background: #fff
+  background: var(#{--card-background-default})
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1)
 
   border-radius: 5px
@@ -230,10 +230,6 @@ export default {
   cursor: pointer
   float: right
 
-.setting
-  &:active
-    background-color: darken(#f9f9f9, 5%)
-
 .copy__icon
   margin-right: 0.5vw
   height: 75%
@@ -252,7 +248,7 @@ export default {
   font-size: 1em
   line-height: 16px
 
-  background: #e9e9e9
+  background: var(#{--option-hover-background-default})
   z-index: 20
 
   @media screen and  (max-width: 901px)

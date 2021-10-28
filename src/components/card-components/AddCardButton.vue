@@ -58,7 +58,7 @@ export default {
   align-items: center
 
   border-radius: 50%
-  background: #fff
+  background: var(#{--card-background-default})
   width: 55px
   height: 55px
   bottom: 5%
@@ -70,7 +70,7 @@ export default {
     left: 45%
 
   &:hover
-    background: #00A3FF
+    background: var(#{--primary-color})
     cursor: pointer
 
   &:active

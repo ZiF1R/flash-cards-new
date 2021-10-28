@@ -11,7 +11,10 @@ $option-hover-background-light: #F6F6F6
 $option-hover-background-dark: #393939
 
 $text-color-light: #171717
-$text-color-dark: rgba(255, 255, 255, .8)
+$text-color-dark: #ffffffcc
+
+$text-color-opacity-light: rgba(23, 23, 23, .6)
+$text-color-opacity-dark: rgba(255, 255, 255, .6)
 
 $nav-background-light: #ffffff
 $nav-background-dark: #2D2D2D
@@ -23,6 +26,9 @@ $nav-icon-color-light: #C1C1C1
 $nav-icon-color-dark: #949494
 
 :root
+  --primary-color: #{$primary-color}
+  --danger-color: #{$danger-color}
+
   --body-background-light: #{$body-background-light}
   --body-background-dark: #{$body-background-dark}
   --body-background-default: var(#{--body-background-light})
@@ -34,6 +40,10 @@ $nav-icon-color-dark: #949494
   --text-color-light: #{$text-color-light}
   --text-color-dark: #{$text-color-dark}
   --text-color-default: var(#{--text-color-light})
+
+  --text-color-opacity-light: #{$text-color-opacity-light}
+  --text-color-opacity-dark: #{$text-color-opacity-dark}
+  --text-color-opacity-default: var(#{--text-color-opacity-light})
 
   --option-hover-background-light: #{$option-hover-background-light}
   --option-hover-background-dark: #{$option-hover-background-dark}

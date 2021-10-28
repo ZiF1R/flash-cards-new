@@ -123,10 +123,12 @@ export default {
 
     border: none
     outline: none
+    background: unset
+    color: var(#{--text-color-default})
 
     margin-bottom: 3vh
     width: 100%
-    border-bottom: 1px solid #000
+    border-bottom: 1px solid var(#{--text-color-opacity-default})
 
 button
   font-style: normal
@@ -144,7 +146,7 @@ button
   outline: none
 
 .reject
-    background-color: #DA2929
+    background-color: var(#{--danger-color})
 
     &:hover
       background-color: lighten(#DA2929, 5%)
@@ -153,7 +155,7 @@ button
         background-color: darken(#DA2929, 5%)
 
 .confirm
-    background-color: #00A3FF
+    background-color: var(#{--primary-color})
 
     &:hover
       background-color: lighten(#00A3FF, 5%)

@@ -365,11 +365,13 @@ export default {
 
   border: none
   outline: none
+  background: unset
 
   margin-top: 4vh
   margin-bottom: 1vh
   width: 100%
-  border-bottom: 1px solid #000
+  color: var(#{--text-color-default})
+  border-bottom: 1px solid var(#{--text-color-default})
 
 .btns
   display: flex
@@ -394,7 +396,7 @@ export default {
     outline: none
 
   .neutral
-    background-color: #00A3FF
+    background-color: var(#{--primary-color})
 
     &:hover
       background-color: lighten(#00A3FF, 5%)
@@ -403,7 +405,7 @@ export default {
       background-color: darken(#00A3FF, 5%)
 
   .negative
-    background-color: #DA2929
+    background-color: var(#{--danger-color})
 
     &:hover
       background-color: lighten(#DA2929, 5%)
@@ -417,13 +419,13 @@ export default {
   font-size: 0.875em
   line-height: 20px
   font-weight: 300
-  color: #000
+  color: var(#{--text-color-default})
 
 .notification_right
   color: green
 
 .notification_wrong
-  color: #DA2929
+  color: var(#{--danger-color})
 
 .total
   text-align: center

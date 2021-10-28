@@ -68,7 +68,7 @@ export default {
   min-width: 270px
   height: max-content
 
-  background: #fff
+  background: var(#{--card-background-default})
   box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1)
 
   @media screen and (max-width: 401px)
@@ -89,7 +89,7 @@ export default {
   height: 30px
 
   &:hover
-    background: #00A3FF
+    background: var(#{--primary-color})
 
   &:active
     background-color: darken(#00A3FF, 5%)

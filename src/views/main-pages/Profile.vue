@@ -190,11 +190,13 @@ export default {
   width: 19vw
   max-width: 300px
   padding-left: 18px
+  color: var(#{--text-color-default})
 
   font-style: normal
   font-weight: 300
   font-size: 1.1875em
   line-height: 28px
+  background: var(#{--card-background-default})
 
   border: none
   outline: none
@@ -226,7 +228,7 @@ export default {
     top: 0%
     height: 100%
     width: 30px
-    background: #fff
+    background: var(#{--card-background-default})
 
     & *
       display: none
@@ -244,7 +246,7 @@ export default {
     height: 100%
     z-index: 2
 
-    background: #00A3FF
+    background: var(#{--primary-color})
 
 .names
   display: flex
@@ -282,7 +284,7 @@ export default {
   outline: none
 
 .create
-  background-color: #00A3FF
+  background-color: var(#{--primary-color})
   margin-right: 50px
 
   &:hover
@@ -295,7 +297,7 @@ export default {
   display: flex
   justify-content: center
   align-items: center
-  background-color: #DA2929
+  background-color: var(#{--danger-color})
 
   &:hover
     background-color: lighten(#DA2929, 5%)

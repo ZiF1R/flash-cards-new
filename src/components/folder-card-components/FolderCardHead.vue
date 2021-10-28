@@ -185,7 +185,7 @@ export default {
   height: auto
   top: 135%
 
-  background: #fff
+  background: var(#{--card-background-default})
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1)
 
   border-radius: 5px
@@ -214,7 +214,7 @@ export default {
     padding: 1px 7px
 
     &:hover
-      background: darken(#fff, 3%)
+      background: var(#{--option-hover-background-default})
 
 .edit__icon,
 .remove__icon
@@ -223,5 +223,5 @@ export default {
   width: 12px
 
 .remove__text
-  color: #CE1010
+  color: var(#{--danger-color})
 </style>

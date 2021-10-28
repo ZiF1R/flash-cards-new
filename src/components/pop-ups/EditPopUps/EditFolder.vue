@@ -110,10 +110,12 @@ export default {
 
     border: none
     outline: none
+    background: unset
 
     margin-bottom: 3vh
     width: 100%
-    border-bottom: 1px solid #000
+    border-bottom: 1px solid var(#{--text-color-default})
+    color: var(#{--text-color-default})
 
 .label-categories
     display: flex
@@ -122,9 +124,10 @@ export default {
     font-weight: 300
     font-size: 1.1875em
     line-height: 28px
+    color: var(#{--text-color-opacity-default})
 
     width: 100%
-    border-bottom: 1px solid #000
+    border-bottom: 1px solid var(#{--text-color-default})
 
 #categories
     flex: 1 0 auto
@@ -133,10 +136,10 @@ export default {
     font-size: 1em
     line-height: 28px
 
-    color: rgba(0, 0, 0, 0.7)
+    color: var(#{--text-color-default})
     border: none
     outline: none
-    background: inherit
+    background: var(#{--card-background-default})
 
 .add-category
     font-style: normal
@@ -148,18 +151,13 @@ export default {
     cursor: pointer
     margin-top: 3vh
     width: 100%
+    color: var(#{--text-color-opacity-default})
 
-    background: #F1F1F1
+    background: var(#{--option-hover-background-default})
     border: none
     outline: none
 
-    &:hover
-      background: darken(#F1F1F1, 2%)
-
-    &:active
-      background-color: darken(#F1F1F1, 4%)
-
-button
+.button
   font-style: normal
   font-weight: normal
   font-size: 1em
@@ -175,7 +173,7 @@ button
   outline: none
 
 .reject
-    background-color: #DA2929
+    background-color: var(#{--danger-color})
 
     &:hover
       background-color: lighten(#DA2929, 5%)
@@ -184,33 +182,11 @@ button
         background-color: darken(#DA2929, 5%)
 
 .confirm
-    background-color: #00A3FF
+    background-color: var(#{--primary-color})
 
     &:hover
       background-color: lighten(#00A3FF, 5%)
 
     &:active
       background-color: darken(#00A3FF, 5%)
-
-.add-category
-    font-style: normal
-    font-weight: 300
-    font-size: 1em
-    line-height: 28px
-
-    padding: 0.2vh 0
-    cursor: pointer
-    margin-top: 3vh
-    width: 100%
-    color: #222
-
-    background: #F1F1F1
-    border: none
-    outline: none
-
-    &:hover
-      background: darken(#F1F1F1, 2%)
-
-    &:active
-      background-color: darken(#F1F1F1, 4%)
 </style>

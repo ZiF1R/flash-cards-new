@@ -1,4 +1,4 @@
-# [flash-cards-new](https://zif1r.github.io/flash-cards-new/) (go to app)
+# [flash-cards-new](https://zif1r.github.io/flash-cards-new/) | [layout](https://www.figma.com/file/LX7YctOczcnCsOOaostSVR/University-project?node-id=0%3A1)
 
 ## Project setup
 ```

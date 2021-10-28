@@ -7,7 +7,7 @@
 <script>
 import StaticElements from "@/components/StaticElements";
 import Loader from "@/components/other/Loader";
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import { _db } from "@/db.js";
 
 export default {
@@ -37,6 +37,7 @@ export default {
   },
 
   methods: {
+    ...mapGetters(["isThemeSwitched"]),
     ...mapActions([
       "fetchUser",
       "fetchFolders",
@@ -48,10 +49,31 @@ export default {
       await this.fetchFolders();
       await this.fetchCategories();
       await this.fetchSettings();
+      if (this.isThemeSwitched()) this.changeTheme();
     },
     changeLang(lang) {
       this.locale = lang;
       localStorage.setItem("lang", this.locale);
+    },
+    changeTheme() {
+      let rootStyles = document.querySelector(":root");
+      let variables = [
+        "body-background",
+        "card-background",
+        "text-color",
+        "text-color-opacity",
+        "option-hover-background",
+        "nav-background",
+        "nav-icon-background",
+        "nav-icon-color",
+      ];
+
+      variables.forEach((variable) => {
+        rootStyles.style.setProperty(
+          `--${variable}-default`,
+          `var(--${variable}-dark)`
+        );
+      });
     },
   },
 };

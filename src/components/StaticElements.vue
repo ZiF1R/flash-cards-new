@@ -59,7 +59,7 @@ export default {
 
 .panel > button
   display: none
-  background: #00A3FF
+  background: var(#{--primary-color})
   outline: none
   border: none
   width: 40px
@@ -84,7 +84,7 @@ export default {
     position: relative
     justify-content: space-between
 
-    background: #fff
+    background: var(#{--card-background-default})
     width: 100vw
     height: 40px
 
@@ -95,7 +95,7 @@ export default {
 
   .lang-component
     position: relative
-    border-left: 1px solid #d6d6d6
+    border-left: 1px solid var(#{--text-color-opacity-default})
 
     width: 40px
     height: 100%

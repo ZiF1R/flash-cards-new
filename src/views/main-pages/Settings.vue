@@ -61,7 +61,7 @@ export default {
             {
               title: "App theme",
               description: "Switch the theme of the app",
-              buttonType: "Switch",
+              buttonClass: "Switch",
               switched: this.isThemeSwitched(),
               property: "switchTheme",
             },
@@ -73,7 +73,7 @@ export default {
             {
               title: "Number of cards",
               description: "Choose number of cards you want to train",
-              buttonType: "List",
+              buttonClass: "List",
               from: 5,
               delta: 5,
               to: 100,
@@ -83,7 +83,7 @@ export default {
             {
               title: "Reversed review",
               description: "Show the card definition first in review",
-              buttonType: "Switch",
+              buttonClass: "Switch",
               switched: this.isReviewSwitched(),
               property: "switched",
             },
@@ -91,7 +91,7 @@ export default {
               title: "Time limit",
               description:
                 "Choose the amount of time that will be given to write an answer (in seconds; to remove the limit, select 0)",
-              buttonType: "List",
+              buttonClass: "List",
               from: 0,
               delta: 5,
               to: 120,
@@ -107,7 +107,7 @@ export default {
               title: "Export cards",
               description:
                 "Export cards from some folder to the file on your device",
-              buttonType: "Button",
+              buttonClass: "Button",
               handler: () => {
                 this.$router.push("/folders?export-cards=true");
 
@@ -142,8 +142,69 @@ export default {
               title: "Import cards",
               description:
                 "Import cards from file on your device to the folder",
-              buttonType: "Button",
-              handler: () => {},
+              buttonClass: "Button",
+              buttonType: "file",
+              handler: (input) => {
+                let reader = new FileReader();
+                reader.readAsText(input.target?.files[0]);
+
+                let file;
+                reader.onload = () => {
+                  file = JSON.parse(reader.result)?.map(
+                    (card) =>
+                      (card = {
+                        ...card,
+                        created: new Date().toUTCString(),
+                        memorized: false,
+                        review: {
+                          right: 0,
+                          wrong: 0,
+                        },
+                      })
+                  );
+                  // console.log(file);
+
+                  this.$router.push("/folders?import-cards=true");
+                  setTimeout(() => {
+                    let foldersToImport =
+                      document.querySelectorAll(".folder.export");
+
+                    foldersToImport.forEach((folder) => {
+                      folder.addEventListener("click", (e) => {
+                        let pressedFolder = e.path.filter((el) =>
+                          el?.classList?.contains("folder")
+                        )[0];
+                        let folderName =
+                          pressedFolder.querySelector(
+                            ".folder__name"
+                          ).innerHTML;
+
+                        this.findFolderByName(folderName).then(
+                          async (folder) => {
+                            let result = [];
+
+                            file.forEach((importCard) => {
+                              let isNew = true;
+                              // eslint-disable-next-line prettier/prettier
+                              for (let i = 0; i < (folder?.cards?.length + 1); i++)
+                                if (importCard.term === folder?.cards[i]?.term)
+                                  isNew = false;
+                              isNew && result.push(importCard);
+                            });
+                            result = {
+                              cards: [...folder.cards, ...result],
+                              data: { ...folder.data },
+                            };
+                            await this.addCards(result);
+                          }
+                        );
+                        this.$router.push("/settings");
+                      });
+                    });
+                  }, 30);
+                };
+                reader.onerror = () => console.log(reader.error);
+              },
             },
           ],
         },
@@ -152,7 +213,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(["findFolderByName"]),
+    ...mapActions(["findFolderByName", "addCards"]),
     ...mapGetters([
       "getTimeLimit",
       "getCardsLimit",

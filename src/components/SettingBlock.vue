@@ -19,11 +19,12 @@
       </div>
       <div class="setting__action">
         <Button
-          v-if="setting.buttonType === `Button`"
-          @tapBtn="setting.handler()"
+          v-if="setting.buttonClass === `Button`"
+          :buttonType="setting.buttonType || 'default'"
+          @tapBtn="setting.handler($event)"
         />
         <List
-          v-if="setting.buttonType === `List`"
+          v-if="setting.buttonClass === `List`"
           :active="setting.active"
           :from="setting.from"
           :to="setting.to"
@@ -31,7 +32,7 @@
           @selectOption="selectOpt($event, setting.property)"
         />
         <Switch
-          v-if="setting.buttonType === `Switch`"
+          v-if="setting.buttonClass === `Switch`"
           :switched="setting.switched"
           @switchChanged="switchChanged($event, setting)"
         />

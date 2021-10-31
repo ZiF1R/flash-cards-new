@@ -89,6 +89,8 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+$blink-color: #fff1771f
+
 .space
   margin-bottom: 2vh
 
@@ -134,15 +136,15 @@ export default {
 
   &.export
     cursor: pointer
-    background: #fffbca49
+    background: $blink-color
 
-    animation: blink 1.5s infinite ease-in-out
+    animation: blink 1.5s infinite
 
 @keyframes blink
   0%
-    background: #fffbca49
+    background: $blink-color
   50%
-    background: #fff3ca00
+    background: #ffffff00
   100%
-    background: #fffbca49
+    background: $blink-color
 </style>

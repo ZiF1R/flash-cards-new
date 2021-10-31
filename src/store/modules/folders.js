@@ -53,6 +53,10 @@ export default {
       }
       return false;
     },
+    async addCards({ commit }, folder) {
+      commit("changeFolder", {oldName: folder.data.name, newFolder: folder});
+      await _db.editFolder(folder, folder.data.name);
+    },
 
     async sendCard({ commit }, { newCard, rootFolder }) {
       if (

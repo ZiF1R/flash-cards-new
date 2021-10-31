@@ -18,6 +18,7 @@
   <div v-else class="button">
     <input
       type="file"
+      accept=".json"
       style="display: none"
       id="contained-button-file"
       @change="$emit('tapBtn', $event)"
@@ -57,14 +58,16 @@ export default {
     cursor: pointer
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1)
 
-    > svg,
-    > label
-      position: relative
+    svg
       width: 70%
       height: 70%
       fill: var(#{--text-color-default})
 
-    > label svg
+    > label
+      display: flex
+      justify-content: center
+      align-items: center
+      position: relative
       width: 100%
       height: 100%
       cursor: pointer

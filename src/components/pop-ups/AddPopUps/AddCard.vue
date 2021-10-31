@@ -109,6 +109,7 @@ export default {
     border: none
     outline: none
     background: unset
+    color: var(#{--text-color-default})
 
     margin-bottom: 3vh
     width: 100%

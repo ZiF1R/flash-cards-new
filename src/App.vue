@@ -66,6 +66,7 @@ export default {
         "nav-background",
         "nav-icon-background",
         "nav-icon-color",
+        "icon-color",
       ];
 
       variables.forEach((variable) => {

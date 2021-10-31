@@ -65,6 +65,7 @@ export default {
   width: 40px
   height: 100%
   cursor: pointer
+  z-index: 30
 
   img
     filter: invert(1)

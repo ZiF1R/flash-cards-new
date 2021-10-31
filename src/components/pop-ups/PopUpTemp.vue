@@ -71,7 +71,7 @@ export default {
   background: var(#{--card-background-default})
   box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1)
 
-  @media screen and (max-width: 401px)
+  @media screen and (max-width: 501px)
     width: 100%
     min-width: 0
 

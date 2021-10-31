@@ -186,6 +186,7 @@ export default {
           "nav-background",
           "nav-icon-background",
           "nav-icon-color",
+          "icon-color",
         ];
 
         variables.forEach((variable) => {
@@ -225,7 +226,8 @@ export default {
   font-weight: normal
   font-size: 1.0625em
   line-height: 24px
-  width: 27%
+
+  width: fit-content
   margin-top: 4vh
   padding-bottom: 1.5vh
 

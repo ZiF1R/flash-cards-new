@@ -209,9 +209,9 @@ export default {
     flex-direction: row
     text-align: left
     align-items: center
-    width: calc( 100% - 14px )
+    width: calc( 100% - 16px )
     height: 3vh
-    padding: 1px 7px
+    padding: 1.5px 8px
 
     &:hover
       background: var(#{--option-hover-background-default})

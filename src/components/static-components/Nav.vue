@@ -16,6 +16,7 @@
             :path="links[index].path"
             :link_id="links[index].id"
             :link_name="links[index].name"
+            @click="$emit('closeNav')"
           />
         </div>
       </div>

@@ -87,6 +87,9 @@ export default {
       commit("removeCard", { rootFolder, cardToRemove });
       await _db.removeCard(rootFolder.data.name, cardToRemove.term);
     },
+    async findFolderByName({ state }, folderName) {
+      return await state.folders.filter((folder) => folder.data.name === folderName)[0];
+    },
   },
   mutations: {
     updateFolders(state, newFoldersData) {

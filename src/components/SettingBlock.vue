@@ -18,7 +18,10 @@
         </div>
       </div>
       <div class="setting__action">
-        <Button v-if="setting.buttonType === `Button`" />
+        <Button
+          v-if="setting.buttonType === `Button`"
+          @tapBtn="setting.handler()"
+        />
         <List
           v-if="setting.buttonType === `List`"
           :active="setting.active"
@@ -84,64 +87,64 @@ export default {
 
 <style lang="sass" scoped>
 .block__settings
-    display: flex
-    flex-direction: column
+  display: flex
+  flex-direction: column
 
 .block__title
-    display: flex
-    width: fit-content
-    position: relative
-    font-style: normal
-    font-weight: normal
-    font-size: 1.0625em
-    line-height: 24px
-    margin-bottom: 2vh
-    color: var(#{--primary-color})
-    cursor: pointer
+  display: flex
+  width: fit-content
+  position: relative
+  font-style: normal
+  font-weight: normal
+  font-size: 1.0625em
+  line-height: 24px
+  margin-bottom: 2vh
+  color: var(#{--primary-color})
+  cursor: pointer
 
-    &:hover .block__link
-        display: block
+  &:hover .block__link
+    display: block
 
 .block__link
-    display: none
-    position: absolute
-    width: 13px
-    height: 13px
-    top: calc( 50% - 15px/2 )
-    left: -2vw
+  display: none
+  position: absolute
+  width: 13px
+  height: 13px
+  top: calc( 50% - 15px/2 )
+  left: -2vw
 
 .block__setting
-    display: flex
-    flex-direction: row
-    margin-bottom: 2vh
+  display: flex
+  flex-direction: row
+  margin-bottom: 2vh
 
-    @media screen and (max-width: 601px)
-      justify-content: space-between
+  @media screen and (max-width: 601px)
+    justify-content: space-between
 
 .setting__text
-    width: 25vw
-    font-style: normal
+  width: 25vw
+  font-style: normal
 
-    @media screen and (max-width: 901px)
-      width: 43vw
+  @media screen and (max-width: 901px)
+    width: 43vw
 
     @media screen and (max-width: 601px)
       width: fit-content
 
 .setting__title
-    font-size: 1.0625em
-    font-weight: 400
-    line-height: 24px
+  font-size: 1.0625em
+  font-weight: 400
+  line-height: 24px
 
 .setting__description
-    line-height: 20px
-    font-weight: 300
-    font-size: 0.9375em
-    color: var(#{--text-color-opacity-default})
+  line-height: 20px
+  font-weight: 300
+  font-size: 0.9375em
+  color: var(#{--text-color-opacity-default})
 
 .setting__action
-    margin-left: 30px
-    display: flex
-    justify-content: center
-    align-items: center
+  margin-left: 30px
+  display: flex
+  justify-content: center
+  align-items: center
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="button" @click.left="switchBtn($event)">
+  <div class="button" @click.left="$emit('tapBtn')">
     <img src="@/assets/settings/export.svg" />
   </div>
 </template>
@@ -15,7 +15,6 @@
     height: 30px
     cursor: pointer
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1)
-    // transition: background .15s ease-in-out
 
     img
         width: 60%

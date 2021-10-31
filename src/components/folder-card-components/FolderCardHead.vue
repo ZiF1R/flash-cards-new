@@ -25,12 +25,15 @@
       :title="localize('You can practice words from this folder')"
       src="@/assets/home/play-button.svg"
     />
-    <img
+    <span
       v-else
       class="folder__review"
       :title="localize('You cannot practice words from this folder')"
-      src="@/assets/home/play-button_disable.svg"
-    />
+    >
+      <svg viewBox="0 0 494.942 494.942" xmlns="http://www.w3.org/2000/svg">
+        <path d="m35.353 0 424.236 247.471-424.236 247.471z" />
+      </svg>
+    </span>
   </div>
   <EditFolder
     v-if="showEdit"
@@ -169,11 +172,17 @@ export default {
     height: 17px
     width: 17px
 
+.export
+  .show-settings,
+  .folder__review
+    pointer-events: none
+
 .folder__review
   float: left
   height: 15px
   width: 15px
   cursor: pointer
+  fill: var(#{--nav-icon-color-default})
 
 .settings-wrapper
   display: flex

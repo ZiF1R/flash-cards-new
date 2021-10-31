@@ -80,6 +80,9 @@ export default {
   -ms-user-select: none
   -moz-user-select: -moz-none
 
+  &.export
+    pointer-events: none
+
   &:hover
     background: var(#{--primary-color})
     cursor: pointer

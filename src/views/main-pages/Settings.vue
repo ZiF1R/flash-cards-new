@@ -35,7 +35,8 @@
 import RoutesTemp from "@/components/RoutesTemp";
 import SettingBlock from "@/components/SettingBlock";
 import localizeFilter from "@/locale/locale";
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
+import FileServer from "file-saver";
 
 export default {
   name: "Settings",
@@ -107,12 +108,42 @@ export default {
               description:
                 "Export cards from some folder to the file on your device",
               buttonType: "Button",
+              handler: () => {
+                this.$router.push("/folders?export-cards=true");
+
+                setTimeout(() => {
+                  let foldersToExport =
+                    document.querySelectorAll(".folder.export");
+
+                  foldersToExport.forEach((folder) => {
+                    folder.addEventListener("click", (e) => {
+                      let pressedFolder = e.path.filter((el) =>
+                        el?.classList?.contains("folder")
+                      )[0];
+                      let folderName =
+                        pressedFolder.querySelector(".folder__name").innerHTML;
+
+                      this.findFolderByName(folderName).then((folder) => {
+                        var blob = new Blob(
+                          [JSON.stringify(folder.cards, null, 2)],
+                          {
+                            type: "text/plain;charset=utf-8",
+                          }
+                        );
+                        FileServer.saveAs(blob, `${folderName}.json`);
+                      });
+                      this.$router.push("/settings");
+                    });
+                  });
+                }, 30);
+              },
             },
             {
               title: "Import cards",
               description:
                 "Import cards from file on your device to the folder",
               buttonType: "Button",
+              handler: () => {},
             },
           ],
         },
@@ -121,6 +152,7 @@ export default {
   },
 
   methods: {
+    ...mapActions(["findFolderByName"]),
     ...mapGetters([
       "getTimeLimit",
       "getCardsLimit",

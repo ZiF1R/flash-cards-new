@@ -82,6 +82,10 @@ export default {
   font-size: 1em
   line-height: 24px
 
+.export
+  .folder__name
+    pointer-events: none
+
 .folder__category
   font-style: normal
   font-weight: 300

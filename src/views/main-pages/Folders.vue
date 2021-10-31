@@ -57,6 +57,16 @@ export default {
     };
   },
 
+  mounted() {
+    let query = this.$router.currentRoute._value.href.match(/\?(\S)+/);
+
+    if (query !== null) {
+      document
+        .querySelectorAll(".item")
+        .forEach((folder) => folder.classList.add("export"));
+    }
+  },
+
   methods: {
     ...mapGetters(["getFolders"]),
     localize(frase) {
@@ -121,4 +131,18 @@ export default {
   padding: 10px 15px
   height: calc( 140px - 20px )
   width: calc( 280px - 30px )
+
+  &.export
+    cursor: pointer
+    background: #fffbca49
+
+    animation: blink 1.5s infinite ease-in-out
+
+@keyframes blink
+  0%
+    background: #fffbca49
+  50%
+    background: #fff3ca00
+  100%
+    background: #fffbca49
 </style>

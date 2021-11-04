@@ -4,31 +4,31 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flash-cards-new/brain.svg"
   },
   {
-    "revision": "251df682ebe261d1d4fc",
+    "revision": "f767a73503a72254f72a",
     "url": "/flash-cards-new/css/app.5160372c.css"
   },
   {
-    "revision": "b0d8749f5d1b548a1254",
+    "revision": "3fe1557c4d8107e70462",
     "url": "/flash-cards-new/css/foldercontent.4352c070.css"
   },
   {
-    "revision": "c3bf966eee5c601de047",
-    "url": "/flash-cards-new/css/folders.dbab0dc8.css"
+    "revision": "d2242a138d3ad464f60e",
+    "url": "/flash-cards-new/css/folders.7487adde.css"
   },
   {
-    "revision": "6a797cf503f1bd7b9e18",
+    "revision": "b3f92f4b62d0b861ccdd",
     "url": "/flash-cards-new/css/login.20033771.css"
   },
   {
-    "revision": "6707bc034a75c8783e28",
+    "revision": "6a1451390763687ebef1",
     "url": "/flash-cards-new/css/profile.eb3d7559.css"
   },
   {
-    "revision": "5eced3a703fee9b100c0",
+    "revision": "8e1a6e63ff9b0cc2d262",
     "url": "/flash-cards-new/css/registration.20033771.css"
   },
   {
-    "revision": "a2e3ba9e2e3379e136b4",
+    "revision": "00ba2a738ad987d6ff80",
     "url": "/flash-cards-new/css/settings.876f6a61.css"
   },
   {
@@ -104,44 +104,44 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flash-cards-new/img/settings_folder.d9e03723.svg"
   },
   {
-    "revision": "d511af1136e876e71de95118c6c2a831",
+    "revision": "cecb54a5ee20a311a350784728732a8b",
     "url": "/flash-cards-new/index.html"
   },
   {
-    "revision": "251df682ebe261d1d4fc",
-    "url": "/flash-cards-new/js/app.9fbc0438.js"
+    "revision": "f767a73503a72254f72a",
+    "url": "/flash-cards-new/js/app.81806246.js"
   },
   {
     "revision": "d7924185ff9ab6cac739",
     "url": "/flash-cards-new/js/chunk-vendors.7650996d.js"
   },
   {
-    "revision": "b0d8749f5d1b548a1254",
-    "url": "/flash-cards-new/js/foldercontent.6eac9d62.js"
+    "revision": "3fe1557c4d8107e70462",
+    "url": "/flash-cards-new/js/foldercontent.001c7c8c.js"
   },
   {
-    "revision": "c3bf966eee5c601de047",
-    "url": "/flash-cards-new/js/folders.feda26c9.js"
+    "revision": "d2242a138d3ad464f60e",
+    "url": "/flash-cards-new/js/folders.e4abc904.js"
   },
   {
     "revision": "690de8e741af7dfa92fb",
     "url": "/flash-cards-new/js/help.51a9b4b5.js"
   },
   {
-    "revision": "6a797cf503f1bd7b9e18",
-    "url": "/flash-cards-new/js/login.b461aaae.js"
+    "revision": "b3f92f4b62d0b861ccdd",
+    "url": "/flash-cards-new/js/login.6ef8afbb.js"
   },
   {
-    "revision": "6707bc034a75c8783e28",
-    "url": "/flash-cards-new/js/profile.92cb487c.js"
+    "revision": "6a1451390763687ebef1",
+    "url": "/flash-cards-new/js/profile.02125b09.js"
   },
   {
-    "revision": "5eced3a703fee9b100c0",
-    "url": "/flash-cards-new/js/registration.f8fed151.js"
+    "revision": "8e1a6e63ff9b0cc2d262",
+    "url": "/flash-cards-new/js/registration.2dc214fb.js"
   },
   {
-    "revision": "a2e3ba9e2e3379e136b4",
-    "url": "/flash-cards-new/js/settings.ceeec654.js"
+    "revision": "00ba2a738ad987d6ff80",
+    "url": "/flash-cards-new/js/settings.40d83994.js"
   },
   {
     "revision": "2656bc1b41460cffa6ded4078c2f4b24",

@@ -134,7 +134,7 @@ export default {
     padding: 1vh 3.5vw
 
     cursor: pointer
-    color: var(#{--text-color-default})
+    color: #fff
     background: none
     border: none
     outline: none

@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flash-cards-new/brain.svg"
   },
   {
-    "revision": "f767a73503a72254f72a",
+    "revision": "040d4584bb197d137c53",
     "url": "/flash-cards-new/css/app.5160372c.css"
   },
   {
@@ -28,8 +28,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flash-cards-new/css/registration.20033771.css"
   },
   {
-    "revision": "00ba2a738ad987d6ff80",
-    "url": "/flash-cards-new/css/settings.876f6a61.css"
+    "revision": "c50db3bbcf4ae3f41b50",
+    "url": "/flash-cards-new/css/settings.9571493b.css"
   },
   {
     "revision": "ce2ec21ee5614a723d95d9fba856c216",
@@ -104,12 +104,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flash-cards-new/img/settings_folder.d9e03723.svg"
   },
   {
-    "revision": "cecb54a5ee20a311a350784728732a8b",
+    "revision": "2d19c512e9d63637479f6435bd2d4521",
     "url": "/flash-cards-new/index.html"
   },
   {
-    "revision": "f767a73503a72254f72a",
-    "url": "/flash-cards-new/js/app.81806246.js"
+    "revision": "040d4584bb197d137c53",
+    "url": "/flash-cards-new/js/app.0983cba6.js"
   },
   {
     "revision": "d7924185ff9ab6cac739",
@@ -140,8 +140,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flash-cards-new/js/registration.2dc214fb.js"
   },
   {
-    "revision": "00ba2a738ad987d6ff80",
-    "url": "/flash-cards-new/js/settings.40d83994.js"
+    "revision": "c50db3bbcf4ae3f41b50",
+    "url": "/flash-cards-new/js/settings.53b7b774.js"
   },
   {
     "revision": "2656bc1b41460cffa6ded4078c2f4b24",

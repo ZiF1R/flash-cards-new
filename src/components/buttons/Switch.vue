@@ -26,7 +26,7 @@ export default {
   display: flex
   align-items: center
   position: relative
-  background: #ccc
+  background: var(#{--nav-icon-color-default})
   width: 40px
   height: 18px
   border-radius: 50px

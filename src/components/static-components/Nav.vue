@@ -22,9 +22,9 @@
       </div>
 
       <div class="nav__footer">
-        <router-link class="footer__help-btn" to="/help">
+        <a class="footer__help-btn" href="mailto:do-alex03@mail.ru">
           {{ localize("Need help") }}?
-        </router-link>
+        </a>
         <a target="blank" href="https://policies.google.com/privacy?hl=en-US">
           {{ localize("Privacy Policy") }}
         </a>

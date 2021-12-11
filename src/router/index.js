@@ -55,15 +55,6 @@ const routes = [
       ),
   },
   {
-    path: "/help",
-    name: "Help",
-    beforeEnter: async (to, from, next) => {
-      if (await _db.isSignIn()) next();
-      else next({ name: "Login" });
-    },
-    component: () => import(/* webpackChunkName: "help" */ "../views/Help.vue"),
-  },
-  {
     path: "/folders/:folder_name",
     name: "FolderContent",
     beforeEnter: async (to, from, next) => {

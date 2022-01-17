@@ -60,7 +60,7 @@
 
 <h3 id="folders">Folders page</h3>
 
-<img src="./readme_src/folders.png" />
+<img src="./readme_src/folders.PNG" />
 
 <br>
 

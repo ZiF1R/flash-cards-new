@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flash-cards-new/brain.svg"
   },
   {
-    "revision": "db88e4dd3ea581698708",
+    "revision": "d583aebfb969b097e526",
     "url": "/flash-cards-new/css/app.5160372c.css"
   },
   {
@@ -104,12 +104,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flash-cards-new/img/settings_folder.d9e03723.svg"
   },
   {
-    "revision": "5768d0bc2a1529d4fe6d1a05ac8186dd",
+    "revision": "688674f9d0c3d2fe1fd026eb7b39b4fd",
     "url": "/flash-cards-new/index.html"
   },
   {
-    "revision": "db88e4dd3ea581698708",
-    "url": "/flash-cards-new/js/app.8dd5a0c9.js"
+    "revision": "d583aebfb969b097e526",
+    "url": "/flash-cards-new/js/app.57acdcb9.js"
   },
   {
     "revision": "d7924185ff9ab6cac739",

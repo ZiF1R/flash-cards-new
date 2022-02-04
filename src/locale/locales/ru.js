@@ -107,7 +107,7 @@ export default {
     "Карточка была скопирована в буфер обмена",
   "There are": "Осталось",
   "characters left": "символов",
-  "Need help": "Нужна помощь",
+  "Contact with us": "Свяжитесь с нами",
   "The character limit has been reached":
     "Было достигнуто ограничение по символам",
   "Privacy Policy": "Политика конфиденциальности",

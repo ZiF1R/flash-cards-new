@@ -23,7 +23,7 @@
 
       <div class="nav__footer">
         <a class="footer__help-btn" href="mailto:do-alex03@mail.ru">
-          {{ localize("Need help") }}?
+          {{ localize("Contact with us") }}
         </a>
         <a target="blank" href="https://policies.google.com/privacy?hl=en-US">
           {{ localize("Privacy Policy") }}

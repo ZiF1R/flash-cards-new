@@ -106,7 +106,7 @@ export default {
   "Copy all": "カード全体をコピーする",
   "There are": "残り",
   "characters left": "文字です",
-  "Need help": "お問合せ",
+  "Contact with us": "お問合せ",
   "The character limit has been reached": "文字数制限に達しました",
   "Privacy Policy": "個人情報保護方針",
   "Terms and Conditions": "規約と条件",

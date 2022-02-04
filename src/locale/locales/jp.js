@@ -1,11 +1,11 @@
 export default {
   Folders: "フォルダー",
-  "Add new folder": "新しいフォルダを追加します", //! tsuika shimasu
+  "Add new folder": "新しいフォルダを追加します",
   "Create new folder": "新しいフォルダを作成する",
   "Add new card": "新しいカードを追加します",
-  Remove: "削除する", //! sakujo suru
-  Edit: "編集", //! henshu-
-  Register: "登録する", //! to-roku
+  Remove: "削除する",
+  Edit: "編集",
+  Register: "登録する",
   Cancel: "キャンセル",
   Close: "閉じる",
   Create: "作る",
@@ -47,7 +47,7 @@ export default {
   "Import cards": "カードをインポートする",
   "Import cards from file on your device to the folder":
     "デバイス上のファイルからフォルダにカードをインポートします",
-  Settings: "設定", //! settei
+  Settings: "設定",
   Category: "カテゴリ",
   "Show password": "パスワードを表示",
   "Hide password": "パスワードを隠す",
@@ -106,7 +106,7 @@ export default {
   "Copy all": "カード全体をコピーする",
   "There are": "残り",
   "characters left": "文字です",
-  "Need help": "助けが必要",
+  "Need help": "お問合せ",
   "The character limit has been reached": "文字数制限に達しました",
   "Privacy Policy": "個人情報保護方針",
   "Terms and Conditions": "規約と条件",

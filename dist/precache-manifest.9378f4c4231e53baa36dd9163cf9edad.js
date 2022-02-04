@@ -4,31 +4,31 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flash-cards-new/brain.svg"
   },
   {
-    "revision": "8edefd30416ed297730c",
+    "revision": "db88e4dd3ea581698708",
     "url": "/flash-cards-new/css/app.5160372c.css"
   },
   {
-    "revision": "3fe1557c4d8107e70462",
+    "revision": "f034809708585779b0cc",
     "url": "/flash-cards-new/css/foldercontent.4352c070.css"
   },
   {
-    "revision": "d2242a138d3ad464f60e",
+    "revision": "555ed8be2460da023aec",
     "url": "/flash-cards-new/css/folders.7487adde.css"
   },
   {
-    "revision": "b3f92f4b62d0b861ccdd",
+    "revision": "0682c7a281077946d5f9",
     "url": "/flash-cards-new/css/login.20033771.css"
   },
   {
-    "revision": "6a1451390763687ebef1",
+    "revision": "8a98fbfc5549f0d5c494",
     "url": "/flash-cards-new/css/profile.eb3d7559.css"
   },
   {
-    "revision": "8e1a6e63ff9b0cc2d262",
+    "revision": "8e640d549d90e7ed71f5",
     "url": "/flash-cards-new/css/registration.20033771.css"
   },
   {
-    "revision": "c50db3bbcf4ae3f41b50",
+    "revision": "36ff65ddff8fb5f12123",
     "url": "/flash-cards-new/css/settings.9571493b.css"
   },
   {
@@ -104,40 +104,40 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flash-cards-new/img/settings_folder.d9e03723.svg"
   },
   {
-    "revision": "e02d3bd8e531defe19a12a6a30727071",
+    "revision": "5768d0bc2a1529d4fe6d1a05ac8186dd",
     "url": "/flash-cards-new/index.html"
   },
   {
-    "revision": "8edefd30416ed297730c",
-    "url": "/flash-cards-new/js/app.d9fd30ce.js"
+    "revision": "db88e4dd3ea581698708",
+    "url": "/flash-cards-new/js/app.8dd5a0c9.js"
   },
   {
     "revision": "d7924185ff9ab6cac739",
     "url": "/flash-cards-new/js/chunk-vendors.7650996d.js"
   },
   {
-    "revision": "3fe1557c4d8107e70462",
-    "url": "/flash-cards-new/js/foldercontent.001c7c8c.js"
+    "revision": "f034809708585779b0cc",
+    "url": "/flash-cards-new/js/foldercontent.3d02e687.js"
   },
   {
-    "revision": "d2242a138d3ad464f60e",
-    "url": "/flash-cards-new/js/folders.e4abc904.js"
+    "revision": "555ed8be2460da023aec",
+    "url": "/flash-cards-new/js/folders.1809d8be.js"
   },
   {
-    "revision": "b3f92f4b62d0b861ccdd",
-    "url": "/flash-cards-new/js/login.6ef8afbb.js"
+    "revision": "0682c7a281077946d5f9",
+    "url": "/flash-cards-new/js/login.8a87b18a.js"
   },
   {
-    "revision": "6a1451390763687ebef1",
-    "url": "/flash-cards-new/js/profile.02125b09.js"
+    "revision": "8a98fbfc5549f0d5c494",
+    "url": "/flash-cards-new/js/profile.98744ee5.js"
   },
   {
-    "revision": "8e1a6e63ff9b0cc2d262",
-    "url": "/flash-cards-new/js/registration.2dc214fb.js"
+    "revision": "8e640d549d90e7ed71f5",
+    "url": "/flash-cards-new/js/registration.4cd36bac.js"
   },
   {
-    "revision": "c50db3bbcf4ae3f41b50",
-    "url": "/flash-cards-new/js/settings.53b7b774.js"
+    "revision": "36ff65ddff8fb5f12123",
+    "url": "/flash-cards-new/js/settings.92f96e4f.js"
   },
   {
     "revision": "2656bc1b41460cffa6ded4078c2f4b24",

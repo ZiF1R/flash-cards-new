@@ -1,4 +1,4 @@
-<h1 id="top" align="center" style="font-weight:">Flash Cards</h1>
+<h1 id="top" align="center" style="font-weight:700">Flash Cards</h1>
 
 <h3 align="right" style="font-weight:">
   Try <a href="https://zif1r.github.io/flash-cards-new/">Live Demo</a>
